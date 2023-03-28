@@ -29,7 +29,8 @@ export default function Products({ url, addToCart }) {
       {products.map(product => (
         
         <div key={product.id}>
-          {product.name}{product.price}€<img src={product.image}/>
+          {product.name}{product.price}€<img src={product.image}/> <div>
+          {product.kuvaus}</div>
           
           <button className='btn btn-primary' type="button" onClick={e => addToCart(product)}>Add</button>
 
