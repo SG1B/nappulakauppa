@@ -7,7 +7,7 @@ footer .container {
 }
 
 footer {
-  position: fixed;
+  position: flex;
   bottom: 0;
   padding-top: 10px;
   width: 100%;
