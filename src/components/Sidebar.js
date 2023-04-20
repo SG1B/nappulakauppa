@@ -44,7 +44,7 @@ export default function Navbar({ url }) {
             
             position: "fixed",
             left: 0,
-            width: "10%",
+            width: "8.5%",
             height: "100%",
             display: "flex",
             flexDirection: "column",
