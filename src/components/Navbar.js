@@ -48,7 +48,7 @@ export default function Navbar({ url, cart }) {
 
 
   return (
-    <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-black">
       <img src={logo} alt="Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">Nappulat.fi</Link>

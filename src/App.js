@@ -2,6 +2,7 @@ import './App.css';
 import React,{useState,useEffect} from 'react';
 import {Routes, Route} from 'react-router-dom';
 import Header from './components/Header';
+import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -13,7 +14,7 @@ import NotFound from './pages/NotFound';
 
 
 
-const URL ='http://localhost/webshop2022/';
+const URL ='https://www.students.oamk.fi/~c2pima00/';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -52,7 +53,9 @@ function App() {
 
   return (
     <>
+      
       <Header />
+      <Sidebar url={URL}  />
       <Navbar url={URL}  cart={cart} />
       <div className='container'>
         <Routes>
@@ -66,6 +69,9 @@ function App() {
           
         </Routes>
       </div>
+      
+      
+      
       <Footer />
     </>
   );
