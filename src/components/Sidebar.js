@@ -41,7 +41,7 @@ export default function Navbar({ url }) {
 
         <div style={{
             backgroundColor: "black",
-            color: "white",
+            
             position: "fixed",
             left: 0,
             width: "10%",
@@ -68,14 +68,14 @@ export default function Navbar({ url }) {
                                 <li key={category.id}>
                                     {<Link
                                         className='dropdown-item'
-                                        to={'/products/' + category.id}>{category.name} style={{ color: "white" }}
+                                        to={'/products/' + category.id}>{category.name}
                                     </Link>}
                                 </li>
                             ))}
                         </ul>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/about"  style={{ color: "white" }}>About</Link>
+                        <Link className="nav-link" to="/about" style={{ color: "white" }}>About</Link>
                     </li>
                 </ul>
             </div>
