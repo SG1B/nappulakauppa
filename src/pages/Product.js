@@ -8,7 +8,7 @@ export default function Product({url}) {
   let params = useParams();
   
   useEffect(() => {
-    axios.get(url + '/Koodit/PHP/getproduct.php/' + params.productId)
+    axios.get(url + 'products/getproduct.php/' + params.productId)
       .then((response) => {
         const json = response.data;
         setProduct(response.data);

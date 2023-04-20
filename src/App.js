@@ -14,7 +14,7 @@ import NotFound from './pages/NotFound';
 
 
 
-const URL ='http://localhost/webshop2022/';
+const URL ='http://localhost:/webshop2022/';
 
 function App() {
   const [cart, setCart] = useState([]);
