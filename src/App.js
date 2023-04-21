@@ -58,7 +58,7 @@ function App() {
       <Sidebar url={URL}  />
       
       <Navbar url={URL}  cart={cart} />
-      <div className='container'>
+      <div className='container appcontainer'>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products/:categoryId" element={<Products url={URL} addToCart={addToCart}/>} />
