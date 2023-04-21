@@ -3,7 +3,7 @@ body {
   min-height: 100vh;
   flex-direction: column;
   background-color: #96f0e4;
-  background-image: url(/src/assets/background_wallpaper_ver1_valittu.jpg);
+  background-image: url(https://www.students.oamk.fi/~n2raro00/logot%20yms/background_wallpaper_ver1_valittu.jpg);
   background-size: contain;
 }
 .container {
