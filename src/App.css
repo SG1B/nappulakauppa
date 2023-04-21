@@ -2,6 +2,9 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background-color: #96f0e4;
+  background-image: url(/src/assets/background_wallpaper_ver1_valittu.jpg);
+  background-size: cover;
 }
 .container {
   padding-top: 100px;
@@ -44,7 +47,7 @@ footer .container {
   border-top: 2px solid #f5f5f5;
   text-align: center;
   background-size: cover;
-  background-color: #58DAC9;
+  background-color: #96f0e4;
   color: #fff;
 }
 
