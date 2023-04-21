@@ -13,7 +13,9 @@ import Order from './pages/Order';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
 
-const URL = 'http://localhost:/webshop2022/';
+
+
+const URL ='http://localhost:/webshop2022/';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -53,8 +55,9 @@ function App() {
   return (
     <>
       <Header />
-      <Sidebar url={URL} />
-      <Navbar url={URL} cart={cart} />
+      <Sidebar url={URL}  />
+      
+      <Navbar url={URL}  cart={cart} />
       <div className='container'>
         <Routes>
           <Route path='/' element={<Home />} />
