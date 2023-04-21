@@ -8,6 +8,7 @@ export default function Home() {
 
       <div class="container">
 
+{/* Karuselli alkaa */}
         <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -16,32 +17,26 @@ export default function Home() {
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777" /></svg>
+              <img class='d-block img-fluid' src='https://www.students.oamk.fi/~n2raro00/Projekti_kuvat/banneri_4_valittu_karuselli.png'></img>
               <div class="container">
                 <div class="carousel-caption text-start">
-                  <h1>Example headline.</h1>
-                  <p>Some representative placeholder content for the first slide of the carousel.</p>
-
+                
                 </div>
               </div>
             </div>
             <div class="carousel-item">
-              <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777" /></svg>
+              <img class='d-block img-fluid' src='https://www.students.oamk.fi/~n2raro00/Projekti_kuvat/Motooki_banner.png'></img>
               <div class="container">
                 <div class="carousel-caption">
-                  <h1>Another example headline.</h1>
-                  <p>Some representative placeholder content for the second slide of the carousel.</p>
-
+                 
                 </div>
               </div>
             </div>
             <div class="carousel-item">
-              <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777" /></svg>
+            <img class='d-block img-fluid' src='https://www.students.oamk.fi/~n2raro00/Projekti_kuvat/Tokaido_banner.png'></img>
               <div class="container">
                 <div class="carousel-caption text-end">
-                  <h1>One more for good measure.</h1>
-                  <p>Some representative placeholder content for the third slide of this carousel.</p>
-
+                
                 </div>
               </div>
             </div>
@@ -55,6 +50,7 @@ export default function Home() {
             <span class="visually-hidden">Next</span>
           </button>
         </div>
+        {/* karuselli loppuu */}
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
           <div class="col">
             <div class="card shadow-sm">
