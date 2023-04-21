@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import Cart from './Cart';
 import SearchResults from './SearchResults';
-import logo from '../assets/Logo.svg';
+import logo from '../assets/logo_ver1.5.png';
 
 import { Link } from 'react-router-dom';
 
