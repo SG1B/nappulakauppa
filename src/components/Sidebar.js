@@ -39,18 +39,7 @@ export default function Navbar({ url }) {
 
     return (
 
-        <div style={{
-            backgroundColor: "black",
-            
-            position: "fixed",
-            left: 0,
-            width: "8.5%",
-            height: "100%",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center"
-        }}>
+        <div id="sidebar">
 
             <div className="container-fluid">
 
