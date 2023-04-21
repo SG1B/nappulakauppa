@@ -14,7 +14,7 @@ import About from './pages/About';
 import NotFound from './pages/NotFound';
 import SearchQueries from './components/SearchQueries';
 
-const URL = 'http://localhost:/webshop2022/';
+const URL = 'http://localhost:/nappulakauppa/';
 
 function App() {
   const [cart, setCart] = useState([]);
