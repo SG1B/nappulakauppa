@@ -55,3 +55,9 @@ a {
   text-decoration: none;
   color: #333;
 }
+
+@media  and (min-width: 1070px) {
+  .sidebar {
+
+  }
+}
