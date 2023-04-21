@@ -21,6 +21,7 @@ export default function Navbar({ url, cart }) {
         alert(error.response === undefined ? error : error.response.data.error);
       })
   }, [])
+
   useEffect(() => {
     if (searchQuery.length > 0) {
       axios.get(`/search?q=${searchQuery}`)
@@ -41,12 +42,6 @@ export default function Navbar({ url, cart }) {
     setShowResults(true);
   }
 
-
-
-
-
-
-
   return (
     <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-black">
       <img src={logo} alt="Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
@@ -56,52 +51,22 @@ export default function Navbar({ url, cart }) {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarCollapse">
-          <ul className="navbar-nav me-auto mb-2 mb-md-0">
-            <li className="nav-item">
-              <Link className="nav-link" to="/">Home</Link>
-            </li>
-            <li className='nav-item dropdown'>
-              <a className='nav-link dropdown-toggle' href="#" id="dropdown01"
-                data-bs-toggle="dropdown" aria-expanded="false">Products</a>
-              <ul className='dropdown-menu' aria-labelledby='dropdown01'>
-                {categories.map(category => (
-                  <li key={category.id}>
-                    {<Link
-                      className='dropdown-item'
-                      to={'/products/' + category.id}>{category.name}
-                    </Link>}
-                  </li>
-                ))}
-              </ul>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/about">About</Link>
-            </li>
+          <ul className="navbar-nav me-auto mb-2 mb-md-0"> 
           </ul>
           <ul className='navbar-nav ml-auto'>
             <li className='nav-item'>
               <Cart cart={cart} />
             </li>
-
           </ul>
-
-
           <nav>
-            <div>
-
-
-            </div>
             <form onSubmit={handleSearch} setSearchQuery={setSearchQuery}>
-              {showResults && <SearchResults searchResults={searchResults} />}
               <input type="text" placeholder="Search" value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} />
               <button type="submit">Search</button>
             </form>
-
+            {showResults && <SearchResults searchResults={searchResults} />}
           </nav>
         </div>
       </div>
-
     </nav>
-
-  )
+  );
 }

@@ -5,7 +5,7 @@ function SearchResults({ searchResults }) {
     <div>
       {searchResults.map((result) => (
         <div key={result.id}>
-          <h3>{result.title}</h3>
+          <a href={`/product/${result.id}`}><h3>{result.title}</h3></a>
           <p>{result.description}</p>
         </div>
       ))}
