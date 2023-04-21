@@ -22,9 +22,10 @@ export default function Navbar({ url, cart }) {
       })
   }, [])
 
-  useEffect(() => {
+  const handleSearch = (event) => {
+    event.preventDefault();
     if (searchQuery.length > 0) {
-      axios.get(`/search?q=${searchQuery}`)
+      axios.get(`${url}search.php?q=${searchQuery}`)
         .then(response => {
           setSearchResults(response.data);
           setShowResults(true);
@@ -35,11 +36,6 @@ export default function Navbar({ url, cart }) {
     } else {
       setShowResults(false);
     }
-  }, [searchQuery]);
-
-  const handleSearch = (event) => {
-    event.preventDefault();
-    setShowResults(true);
   }
 
   return (
@@ -61,13 +57,12 @@ export default function Navbar({ url, cart }) {
           <nav>
             <form onSubmit={handleSearch} setSearchQuery={setSearchQuery}>
               <input type="text" placeholder="Search" value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} />
-              <button type="submit" class="btn btn-outline-secondary">Search</button>
+              <button type="submit" className="btn btn-outline-secondary">Search</button>
             </form>
-
+            {showResults && <SearchResults searchResults={searchResults} />}
           </nav>
         </div>
       </div>
     </nav>
-
   )
 }

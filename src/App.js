@@ -12,10 +12,9 @@ import Product from './pages/Product';
 import Order from './pages/Order';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
+import SearchQueries from './components/SearchQueries';
 
-
-
-const URL ='http://localhost:/nappulakauppa/';
+const URL = 'http://localhost:/webshop2022/';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -55,9 +54,8 @@ function App() {
   return (
     <>
       <Header />
-      <Sidebar url={URL}  />
-      
-      <Navbar url={URL}  cart={cart} />
+      <Sidebar url={URL} />
+      <Navbar url={URL} cart={cart} />
       <div className='container'>
         <Routes>
           <Route path='/' element={<Home />} />
@@ -66,6 +64,7 @@ function App() {
           <Route path='/order' element={<Order cart={cart} removeFromCart={removeFromCart} updateAmount={updateAmount} />} />
           <Route path='/about' element={<About />} />
           <Route path='/search/:query' element={<SearchResults />} />
+          <Route path='/searchqueries' element={<SearchQueries />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </div>
