@@ -14,7 +14,7 @@ import NotFound from './pages/NotFound';
 
 
 
-const URL ='https://www.students.oamk.fi/~c2pima00/';
+const URL ='http://localhost:/webshop2022/';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -56,6 +56,7 @@ function App() {
       
       <Header />
       <Sidebar url={URL}  />
+      
       <Navbar url={URL}  cart={cart} />
       <div className='container'>
         <Routes>

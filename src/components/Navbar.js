@@ -58,7 +58,7 @@ export default function Navbar({ url, cart }) {
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <ul className="navbar-nav me-auto mb-2 mb-md-0">
             <li className="nav-item">
-              <Link className="nav-link" to="/">Home111</Link>
+              <Link className="nav-link" to="/">Home</Link>
             </li>
             <li className='nav-item dropdown'>
               <a className='nav-link dropdown-toggle' href="#" id="dropdown01"
