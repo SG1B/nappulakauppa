@@ -27,8 +27,8 @@ export default function Order({cart,removeFromCart,updateAmount}) {
 
   return (
     
-    <div>
-      
+    <div className='container'>
+      <div className='appcontainer'>
       <h3 className="header">Items in cart</h3>
       <table className="table">
         
@@ -57,7 +57,7 @@ export default function Order({cart,removeFromCart,updateAmount}) {
         </tbody>
         
       </table>
-      
+      </div>
     </div>
     
   )
