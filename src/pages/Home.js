@@ -14,6 +14,8 @@ export default function Home() {
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Slide 1"></button>
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
@@ -21,6 +23,22 @@ export default function Home() {
               <div class="container">
                 <div class="carousel-caption text-start">
                 
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class='d-block img-fluid' src='https://www.students.oamk.fi/~n2raro00/Projekti_kuvat/Umo_banner.png'></img>
+              <div class="container">
+                <div class="carousel-caption">
+                 
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class='d-block img-fluid' src='https://www.students.oamk.fi/~n2raro00/Projekti_kuvat/bag_banneri_ver2.png'></img>
+              <div class="container">
+                <div class="carousel-caption">
+                 
                 </div>
               </div>
             </div>
