@@ -29,7 +29,7 @@ export default function Order({cart,removeFromCart,updateAmount}) {
     
     <div className='container'>
       <div className='appcontainer'>
-      <h3 className="header">Items in cart</h3>
+      <h3 className="header">Ostoskorin sisältö:</h3>
       <table className="table">
         
         <tbody>
@@ -43,7 +43,7 @@ export default function Order({cart,removeFromCart,updateAmount}) {
                 <td>
                   <input ref={inputs[index]} style={{width: '60px'}} value={product.amount} onChange={e => changeAmount(e,product,index)} />
                 </td>
-                <td><a href="#" onClick={() => removeFromCart(product)}>Delete</a></td>
+                <td><a href="#" onClick={() => removeFromCart(product)}>Poista</a></td>
               </tr>
             )
             })}
