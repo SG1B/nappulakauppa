@@ -40,7 +40,7 @@ export default function Navbar({ url, cart }) {
 
   return (
     <nav className="navbar navbar-expand-md navbar-dark fixed-top">
-      <img src={logo} alt="Logo" style={{ width: '25%', height: '25%', marginRight: '10px' }} />
+      <img src={logo} alt="Logo" id='logo'/>
       <div className="container-fluid">
         <Link className="navbar-brand" to="/"></Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">

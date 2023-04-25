@@ -4,7 +4,9 @@ export default function Footer() {
   return (
     <footer className='footer'>
       <div className='container-fluid'>
-        <span>FOOTERaaaa</span>
+        <span>Ota yhteyttä:</span>
+        <span>Linkit:</span>
+        <span>Maksutavat:</span>
       </div>
     </footer>
   )

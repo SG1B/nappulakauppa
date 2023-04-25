@@ -21,7 +21,7 @@ export default function Products({ url, addToCart }) {
 
   return (
     <div>
-      <h3>Products for {categoryName} Saatana!g</h3>
+      <h3>Products for {categoryName}.</h3>
       <main>
 
     </main>
