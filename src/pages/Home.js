@@ -19,7 +19,7 @@ export default function Home() {
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img class='d-block img-fluid' src='https://www.students.oamk.fi/~n2raro00/Projekti_kuvat/banneri_4_valittu_karuselli.png'></img>
+              <img class='d-block img-fluid' src='https://www.students.oamk.fi/~n2raro00/Projekti_kuvat/tervetuloabanneri.jpg'></img>
               <div class="container">
                 <div class="carousel-caption text-start">
                 
