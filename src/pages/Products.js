@@ -21,7 +21,9 @@ export default function Products({ url, addToCart }) {
 
   return (
     <div>
-      <h3>Tuotteet kategorista {categoryName}.</h3>
+      <div id="tuoteotsikko">
+      <h3>{categoryName}</h3>
+      </div>
       <div class="row">
         {products.map(product => (
           <div class="col-sm-4">

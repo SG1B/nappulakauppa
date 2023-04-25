@@ -61,6 +61,12 @@ a {
   color: #333;
 }
 
+#tuoteotsikko {
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 /* @media  and (min-width: 1070px) {
 
 } */
