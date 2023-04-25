@@ -21,26 +21,29 @@ export default function Products({ url, addToCart }) {
 
   return (
     <div>
-      <h3>Products for {categoryName}.</h3>
-      <main>
-
-    </main>
- 
-      {products.map(product => (
-        
-        <div key={product.id}>
-          {product.name}{product.price}€<img src={product.image}/> <div>
-          {product.kuvaus}</div>
-          
-          <button className='btn btn-primary' type="button" onClick={e => addToCart(product)}>Add</button>
-
-        </div>
-      ))}
+      <h3>Tuotteet kategorista {categoryName}.</h3>
+      <div class="row">
+        {products.map(product => (
+          <div class="col-sm-4">
+            <div class="card shadow-sm">
+              <img src={product.image} alt={product.name} />
+              <div class="card-body">
+                <p class="card-text">{product.name}</p>
+                <p class="card-text">{product.price} €</p>
+                <p class="card-text">{product.kuvaus}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button className='btn btn-primary' type="button" onClick={e => addToCart(product)}>Lisää</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
-
-
 
 {/*    <Link 
             to={'/product/' + product.id}>
