@@ -37,7 +37,7 @@ export default function Products({ url, addToCart }) {
             <h3>{categoryName}</h3>
           </div>
           <div className="row">
-            {products && products.map(product => (
+            {products.map(product => (
               <div className="col-sm-4 single-item" key={product.id}>
                 <div className="card shadow-sm">
                   <img src={product.image} alt={product.name} />
@@ -45,11 +45,9 @@ export default function Products({ url, addToCart }) {
                     <p className="card-text">{product.name}</p>
                     <p className="card-text">{product.price} €</p>
                     <p className="card-text text-single-line">{product.kuvaus}</p>
-                    <div className="d-flex justify-content-between align-items-center">
-                      <div className="btn-group">
-                        <button className='btn btn-outline-dark' type="button" onClick={() => handleProductSelect(product.id)}>Tietoja</button>
-                        <button className='btn btn-outline-dark' type="button" onClick={e => addToCart(product)}>Lisää ostoskoriin</button>
-                      </div>
+                    <div className="btn-group">
+                      <Link to={`/product/${product.id}`} className='btn btn-outline-dark'>Tietoja</Link>
+                      <button className='btn btn-outline-dark' type="button" onClick={e => addToCart(product)}>Lisää ostoskoriin</button>
                     </div>
                   </div>
                 </div>
