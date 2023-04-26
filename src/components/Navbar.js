@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import Cart from './Cart';
 import SearchResults from './SearchResults';
+import LoginButton from './LoginButton'; // Import the LoginButton component
 import logo from '../assets/banneri_1_ilmanpuskaa.png';
 
 import { Link } from 'react-router-dom';
@@ -11,6 +12,7 @@ export default function Navbar({ url, cart }) {
   const [searchResults, setSearchResults] = useState([]);
   const [categories, setCategories] = useState([]);
   const [showResults, setShowResults] = useState(false);
+  
 
   useEffect(() => {
     axios.get(url + 'products/getcategories.php')
@@ -36,6 +38,7 @@ export default function Navbar({ url, cart }) {
     } else {
       setShowResults(false);
     }
+    
   }
 
   return (
@@ -52,6 +55,9 @@ export default function Navbar({ url, cart }) {
           <ul className='navbar-nav ml-auto'>
             <li className='nav-item'>
               <Cart cart={cart} />
+            </li>
+            <li className='nav-item'>
+              <LoginButton /> {/* Add the LoginButton component */}
             </li>
           </ul>
           <nav>
