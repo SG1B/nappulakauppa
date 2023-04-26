@@ -12,6 +12,7 @@ import Product from './pages/Product';
 import Order from './pages/Order';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
+import SearchPage from './pages/SearchPage';
 import SearchQueries from './components/SearchQueries';
 
 const URL = 'http://localhost/nappulakauppa/';
@@ -65,6 +66,7 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/search/:query' element={<SearchResults />} />
           <Route path='/searchqueries' element={<SearchQueries />} />
+          <Route path='/searchpage' element={<SearchPage />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </div>

@@ -4,14 +4,28 @@ function LoginWindow({ onClose }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = () => {
-    // Here you can handle the login logic with the username and password
-    console.log(`Logging in with username ${username} and password ${password}`);
-    // Clear the username and password fields after logging in
-    setUsername("");
-    setPassword("");
-    // Call the onClose function to hide the login window
-    onClose();
+  const handleLogin = async () => {
+    try {
+      const response = await fetch("https://www.students.oamk.fi/~c2pima00/login.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ username, password })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // jos login onnistuu, tee jotain esim redirect sivulle
+        console.log("Login successful");
+      } else {
+        // jos login epäonnistuu, tee jotain esim näytä virheilmoitus
+        console.log(data.error);
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -41,4 +55,4 @@ function LoginWindow({ onClose }) {
   );
 }
 
-export default LoginWindow;
+export default LoginWindow; 
