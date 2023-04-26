@@ -36,7 +36,12 @@ export default function Products({ url, addToCart }) {
                 <p class="card-text text-single-line">{product.kuvaus}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button className='btn btn-outline-dark' type="button"> Tietoja</button>
+                    <button className='btn btn-outline-dark' type="button">                                    
+                                    {<Link
+                                        className='dropdown-item'
+                                        to={'/products/' + product.id}> Tietoja
+                                    </Link>}
+                    </button>
                     <button className='btn btn-outline-dark' type="button" onClick={e => addToCart(product)}>Lisää ostoskoriin</button>
                   </div>
                 </div>
