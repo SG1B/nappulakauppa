@@ -6,8 +6,8 @@ import Product from './Product';
 export default function Products({ url, addToCart }) {
   const [categoryName, setCategoryName] = useState('');
   const [products, setProducts] = useState([]);
-
-  let params = useParams();
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const params = useParams();
 
   useEffect(() => {
     axios.get(url + 'products/getproducts.php/' + params.categoryId)
@@ -15,48 +15,49 @@ export default function Products({ url, addToCart }) {
         const json = response.data;
         setCategoryName(json.category);
         setProducts(json.products);
-      }).catch(error => {
-        alert(error.response === undefined ? error : error.response.data.error);
       })
-  }, [params])
+      .catch(error => {
+        alert(error.response === undefined ? error : error.response.data.error);
+      });
+  }, [params]);
+
+  const handleProductSelect = (productId) => {
+    setSelectedProduct(productId);
+  };
+
+  const filteredProduct = products.find(product => product.id === selectedProduct);
 
   return (
     <div>
-      <div id="tuoteotsikko">
-      <h3>{categoryName}</h3>
-      </div>
-      <div class="row">
-        {products.map(product => (
-          <div class="col-sm-4 single-item">
-            <div class="card shadow-sm">
-              <img src={product.image} alt={product.name} />
-              <div class="card-body">
-                <p class="card-text">{product.name}</p>
-                <p class="card-text">{product.price} €</p>
-                <p class="card-text text-single-line">{product.kuvaus}</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button className='btn btn-outline-dark' type="button">                                    
-                                    {<Link
-                                        className='dropdown-item'
-                                        to={'/products/' + product.id}> Tietoja
-                                    </Link>}
-                    </button>
-                    <button className='btn btn-outline-dark' type="button" onClick={e => addToCart(product)}>Lisää ostoskoriin</button>
+      {filteredProduct ? (
+        <Product url={url} product={filteredProduct} />
+      ) : (
+        <div>
+          <div id="tuoteotsikko">
+            <h3>{categoryName}</h3>
+          </div>
+          <div className="row">
+            {products && products.map(product => (
+              <div className="col-sm-4 single-item" key={product.id}>
+                <div className="card shadow-sm">
+                  <img src={product.image} alt={product.name} />
+                  <div className="card-body">
+                    <p className="card-text">{product.name}</p>
+                    <p className="card-text">{product.price} €</p>
+                    <p className="card-text text-single-line">{product.kuvaus}</p>
+                    <div className="d-flex justify-content-between align-items-center">
+                      <div className="btn-group">
+                        <button className='btn btn-outline-dark' type="button" onClick={() => handleProductSelect(product.id)}>Tietoja</button>
+                        <button className='btn btn-outline-dark' type="button" onClick={e => addToCart(product)}>Lisää ostoskoriin</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+      )}
     </div>
-  )
+  );
 }
-
-{/*    <Link 
-            to={'/product/' + product.id}>
-              <p>
-                {product.name}
-              </p>
-          </Link> */}
