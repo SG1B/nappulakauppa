@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import Product from './Product';
 
 export default function Products({ url, addToCart }) {
   const [categoryName, setCategoryName] = useState('');
@@ -35,7 +36,7 @@ export default function Products({ url, addToCart }) {
                 <p class="card-text text-single-line">{product.kuvaus}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button className='btn btn-outline-dark' type="button">Tietoja</button>
+                    <button className='btn btn-outline-dark' type="button"> Tietoja</button>
                     <button className='btn btn-outline-dark' type="button" onClick={e => addToCart(product)}>Lisää ostoskoriin</button>
                   </div>
                 </div>
