@@ -26,13 +26,13 @@ export default function Products({ url, addToCart }) {
       </div>
       <div class="row">
         {products.map(product => (
-          <div class="col-sm-4">
+          <div class="col-sm-4 single-item">
             <div class="card shadow-sm">
               <img src={product.image} alt={product.name} />
               <div class="card-body">
                 <p class="card-text">{product.name}</p>
                 <p class="card-text">{product.price} €</p>
-                <p class="card-text">{product.kuvaus}</p>
+                <p class="card-text text-single-line">{product.kuvaus}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button className='btn btn-primary' type="button" onClick={e => addToCart(product)}>Lisää</button>

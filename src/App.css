@@ -2,30 +2,36 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background-image: url(https://www.students.oamk.fi/~n2raro00/Projekti_kuvat/background_wallpaper_ver1_valittu.jpg);
+  background-image: url(../src/assets/background_wallpaper_ver1_valittu.jpg);
   background-size: contain;
 }
+
 .container {
   padding-top: 100px;
   flex: 1;
 }
+
 .appcontainer {
   min-height: 100vh;
 }
+
 .navbar {
   height: 100px;
   background-color: #96f0e4;
   z-index: 3;
 }
+
 #logo {
   width: 250px;
   height: 90px;
   margin-right: 10px;
 }
+
 Route {
   overflow: auto;
   padding-bottom: 100px;
 }
+
 #sidebar {
   background-color: #EBA747;          
   position: fixed;
@@ -38,6 +44,7 @@ Route {
   justify-content: center;
   z-index: 2;
 }
+
 footer .container {
   margin-top: 0;
 }
@@ -59,6 +66,16 @@ footer .container {
 a {
   text-decoration: none;
   color: #333;
+}
+
+.text-single-line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.single-item {
+  margin-bottom: 20px;
 }
 
 #tuoteotsikko {
