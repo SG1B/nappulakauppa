@@ -35,7 +35,8 @@ export default function Products({ url, addToCart }) {
                 <p class="card-text text-single-line">{product.kuvaus}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button className='btn btn-primary' type="button" onClick={e => addToCart(product)}>Lisää</button>
+                    <button className='btn btn-outline-dark' type="button">Tietoja</button>
+                    <button className='btn btn-outline-dark' type="button" onClick={e => addToCart(product)}>Lisää ostoskoriin</button>
                   </div>
                 </div>
               </div>
