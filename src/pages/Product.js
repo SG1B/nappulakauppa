@@ -29,19 +29,20 @@ export default function Product({ url, addToCart }) {
   };
   
   return (
-    <div>
+    <div className="row">
+      {/* :) */}
       {product ? (
         <>
           <img src={product.image} alt={product.name} />
           <h3>{product.name}</h3>
-          <p>{product.price}</p>
+          <p>{product.price} €</p>
           <p>{product.kuvaus}</p>
           <div className="btn-group">
           <button className='btn btn-outline-dark' type="button" onClick={() => addToCart(product.id)}>Lisää ostoskoriin</button>
           </div>
         </>
       ) : (
-        <p>Loading...</p>
+        <p>Ladataan...</p>
       )}
     </div>
   );
