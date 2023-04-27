@@ -9,7 +9,12 @@ body {
 
 .container {
   padding-top: 100px;
-  flex: 1;
+  padding-bottom: 20px;
+  /* flex: 1; */
+}
+
+#myCarousel .container {
+  padding-bottom: 0px;
 }
 
 .appcontainer {
@@ -19,7 +24,11 @@ body {
 .navbar {
   height: 100px;
   background-color: #96f0e4;
-  /* z-index: 3; */
+}
+
+.navbar button {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 #logo {
