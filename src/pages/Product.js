@@ -7,9 +7,7 @@ export default function Product({ url, addToCart }) {
   const [selectedProduct, setSelectedProduct] = useState(null);
   let params = useParams();
 
-  const handleAddToCart = (product) => {
-    addToCart(product);
-  };
+ 
   useEffect(() => {
     axios
       .get(`${url}products/getproduct.php/${params.productId}`)
@@ -24,13 +22,11 @@ export default function Product({ url, addToCart }) {
       });
   }, [params, url]);
 
-  const handleProductSelect = (productId) => {
-    setSelectedProduct(productId);
-  };
+ 
   
   return (
     <div className="row">
-      {/* :) */}
+      
       {product ? (
         <>
                  <div className='container col-sm-4'>
@@ -43,6 +39,7 @@ export default function Product({ url, addToCart }) {
           <div className="btn-group">
           <button className='btn btn-outline-dark' type="button" onClick={() => addToCart(product.id)}>Lisää ostoskoriin</button>
           </div>
+          
         </div>
         </>
       ) : (

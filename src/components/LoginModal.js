@@ -4,28 +4,28 @@ function LoginWindow({ onClose }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = async () => {
-    try {
-      const response = await fetch("https://www.students.oamk.fi/~c2pima00/login.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ username, password })
-      });
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
 
-      const data = await response.json();
+    const form = event.target;
+    const formData = new FormData(form);
 
-      if (data.success) {
-        // jos login onnistuu, tee jotain esim redirect sivulle
-        console.log("Login successful");
-      } else {
-        // jos login epäonnistuu, tee jotain esim näytä virheilmoitus
-        console.log(data.error);
-      }
-    } catch (error) {
-      console.error(error);
-    }
+    fetch("https://www.students.oamk.fi/~c2pima00/login.php", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          // handle successful login
+          console.log("Login successful");
+        } else {
+          // handle login error
+          console.log(data.error);
+        }
+      })
+      .catch((error) => console.error(error));
+      
   };
 
   return (
@@ -33,26 +33,32 @@ function LoginWindow({ onClose }) {
       <div className="login-window">
         <div className="login-header">
           <h2>Login</h2>
-          <button className="close-btn" onClick={onClose}>X</button>
+          <button className="close-btn" onClick={onClose}>
+            X
+          </button>
         </div>
         <div className="login-body">
-          <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button onClick={handleLogin}>Submit</button>
+          <form onSubmit={handleFormSubmit}>
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <button type="submit">Submit</button>
+          </form>
         </div>
       </div>
     </div>
   );
 }
 
-export default LoginWindow; 
+export default LoginWindow;
