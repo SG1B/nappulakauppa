@@ -1,20 +1,18 @@
 body {
   display: flex;
-  flex-grow: 1;
   min-height: 100vh;
   flex-direction: column;
   background-image: url(../src/assets/background_wallpaper_ver1_valittu.jpg);
   background-size: contain;
 }
 
-.container {
+main {
   padding-top: 100px;
   padding-bottom: 20px;
-  /* flex: 1; */
 }
 
 #myCarousel .container {
-  padding-bottom: 0px;
+  padding-bottom: 20px;
 }
 
 .appcontainer {
@@ -134,7 +132,16 @@ a {
 }
 
 .product-container {
-  background-color: #96f0e4;
+  background-color: #fff;
+  border: solid 2.5px #EBA747;
+  border-radius: 5px;
+  padding: 20px;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.price {
+  font-size: large;
 }
 
 .ostoskoriform {

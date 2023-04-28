@@ -27,8 +27,8 @@ export default function Product({ url, addToCart }) {
  }
   
   return (
+    <main>
     <div className="row">
-
       {product ? (
         <>
           <div className='container col-sm-4'>
@@ -36,8 +36,8 @@ export default function Product({ url, addToCart }) {
           </div>
           <div className='container product-container col-sm-4'>
             <h3>{product.name}</h3>
-            <p>{product.price} €</p>
             <p>{product.kuvaus}</p>
+            <p className='price'>{product.price} €</p>
             <div className="btn-group">
               <button className='btn btn-outline-dark' type="button" onClick={() => addToCart(product.id)}>Lisää ostoskoriin</button>
             </div>
@@ -48,5 +48,6 @@ export default function Product({ url, addToCart }) {
         <p>Ladataan...</p>
       )}
     </div>
+    </main>
   );
 }
