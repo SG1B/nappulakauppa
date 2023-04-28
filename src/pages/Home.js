@@ -1,24 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link, useParams } from 'react-router-dom';
-import Product from './Product';
 
 
 export default function Home({url}) {
-  const [categoryName, setCategoryName] = useState('');
   const [products, setProducts] = useState([]);
-  const params = useParams();
+  
+
   useEffect(() => {
-    axios.get(url + 'products/getproducts.php/' + params.categoryId)
+    axios.get(url+'products/getallproducts.php')
       .then((response) => {
-        const json = response.data;
-        setCategoryName(json.category);
-        setProducts(json.products);
+        const data = response.data;
+        setProducts(data);
       })
-      .catch(error => {
-        alert(error.response === undefined ? error : error.response.data.error);
+      .catch((error) => {
+        console.log(error);
       });
-  }, [params]);
+  }, []);
   return (
     <main>
 
