@@ -21,8 +21,10 @@ export default function Product({ url, addToCart }) {
         );
       });
   }, [params, url]);
-
- 
+  console.log(product)
+ if (product){
+  console.log(product.name)
+ }
   
   return (
     <div className="row">
