@@ -55,6 +55,10 @@ body {
   z-index: 2;
 }
 
+span {
+  color: #333;
+}
+
 footer .container {
   margin-top: auto;
 }
@@ -71,6 +75,10 @@ footer .container {
   background-size: cover;
   background-color: #96f0e4;
   color: #fff;
+}
+
+.header {
+  margin-top: 20px;
 }
 
 a {
@@ -97,6 +105,14 @@ a {
 .product-image {
   height: 500px;
   width: 500px;
+}
+
+.product-container {
+  background-color: #96f0e4;
+}
+
+.ostoskoriform {
+  margin-bottom: 100px;
 }
 
 .login-window-wrapper {

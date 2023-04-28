@@ -88,7 +88,7 @@ export default function Order({url, cart,removeFromCart,updateAmount,empty}) {
         {cart.length > 0 && // Render order form, if there is something in cart.
           <>
             <h3 className="header">Client information</h3>
-            <form onSubmit={order}>
+            <form className='ostoskoriform' onSubmit={order}>
               <div className="form-group">
                 <label>First name:</label>
                 <input className="form-control" onChange={e => setFirstname(e.target.value)}/>

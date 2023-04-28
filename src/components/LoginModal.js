@@ -53,7 +53,7 @@ function LoginWindow({ onClose }) {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button type="submit">Submit</button>
+            <button className="btn btn-outline-dark" type="submit">Submit</button>
           </form>
         </div>
       </div>

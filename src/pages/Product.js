@@ -28,21 +28,21 @@ export default function Product({ url, addToCart }) {
   
   return (
     <div className="row">
-      
+
       {product ? (
         <>
-                 <div className='container col-sm-4'>
-          <img class="product-image" src={product.image} alt={product.name} />
-        </div>
-        <div className='container col-sm-4'>
-          <h3>{product.name}</h3>
-          <p>{product.price} €</p>
-          <p>{product.kuvaus}</p>
-          <div className="btn-group">
-          <button className='btn btn-outline-dark' type="button" onClick={() => addToCart(product.id)}>Lisää ostoskoriin</button>
+          <div className='container col-sm-4'>
+            <img class="product-image" src={product.image} alt={product.name} />
           </div>
-          
-        </div>
+          <div className='container product-container col-sm-4'>
+            <h3>{product.name}</h3>
+            <p>{product.price} €</p>
+            <p>{product.kuvaus}</p>
+            <div className="btn-group">
+              <button className='btn btn-outline-dark' type="button" onClick={() => addToCart(product.id)}>Lisää ostoskoriin</button>
+            </div>
+
+          </div>
         </>
       ) : (
         <p>Ladataan...</p>
