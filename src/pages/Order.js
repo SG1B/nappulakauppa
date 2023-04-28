@@ -60,6 +60,7 @@ export default function Order({url, cart,removeFromCart,updateAmount,empty}) {
 
   if (finished === false) {
     return (
+      <main>
       <div>
         <h3 className="header">Items in cart</h3>
         <table className="table">
@@ -116,8 +117,13 @@ export default function Order({url, cart,removeFromCart,updateAmount,empty}) {
             </>
           }
       </div>
+      </main>
     )
   } else {
-    return (<h3>Thank you for your order</h3>);
+    return (
+    <main>
+    <h3>Thank you for your order</h3>
+    </main>
+    );
   }
 }

@@ -28,6 +28,7 @@ export default function Products({ url, addToCart }) {
   const filteredProduct = products.find(product => product.id === selectedProduct);
 
   return (
+    <main>
     <div>
       {filteredProduct ? (
         <Product url={url} product={filteredProduct} />
@@ -57,5 +58,6 @@ export default function Products({ url, addToCart }) {
         </div>
       )}
     </div>
+    </main>
   );
 }
