@@ -32,7 +32,7 @@ function LoginWindow({ onClose }) {
     <div className="login-window-wrapper">
       <div className="login-window">
         <div className="login-header">
-          <h2>Login</h2>
+          <h2>Kirjautuminen</h2>
           <button className="close-btn" onClick={onClose}>
             X
           </button>
@@ -42,18 +42,18 @@ function LoginWindow({ onClose }) {
             <input
               type="text"
               name="username"
-              placeholder="Username"
+              placeholder="Käyttäjätunnus"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
             <input
               type="password"
               name="password"
-              placeholder="Password"
+              placeholder="Salasana"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button className="btn btn-outline-dark" type="submit">Submit</button>
+            <button className="btn btn-outline-dark" type="submit">Sisään</button>
           </form>
         </div>
       </div>
