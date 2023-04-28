@@ -37,6 +37,10 @@ body {
   margin-right: 10px;
 }
 
+.cart-number {
+  font-size: large;
+}
+
 /* Route {
   overflow: auto;
   padding-bottom: 100px;
@@ -56,6 +60,28 @@ body {
 }
 
 span {
+  color: #333;
+}
+
+.nav-link {
+  color: #333;
+  text-decoration: none;
+}
+
+.nav-link:link {
+  color: #333;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  color: #333;
+}
+
+.nav-link:visited {
+  color: #333;
+}
+
+.nav-link:active {
   color: #333;
 }
 
