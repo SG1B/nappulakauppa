@@ -124,6 +124,10 @@ a {
   margin-bottom: 10px;
 }
 
+.products-main {
+  margin-left: 150px;
+}
+
 .product-image {
   margin-top: 50px;
   height: 500px;

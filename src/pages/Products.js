@@ -28,7 +28,7 @@ export default function Products({ url, addToCart }) {
   const filteredProduct = products.find(product => product.id === selectedProduct);
 
   return (
-    <main>
+    <main className='products-main'>
     <div>
       {filteredProduct ? (
         <Product url={url} product={filteredProduct} />
