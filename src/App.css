@@ -212,6 +212,29 @@ a {
   font-size: 24px;
   cursor: pointer;
 }
+
+.aImg > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.about > h3, .about > h4 {
+  text-align: center;
+}
+
+.about {
+  border: #EBA747 solid 2.5px;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 20px;
+  padding-right: 40px;
+  padding-left: 40px;
+  margin-left: 15%;
+  margin-right: 15%;
+
+}
 /* @media  and (min-width: 1070px) {
 
 } */
