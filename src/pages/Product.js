@@ -4,7 +4,6 @@ import axios from 'axios';
 
 export default function Product({ url, addToCart }) {
   const [product, setProduct] = useState(null);
-  const [selectedProduct, setSelectedProduct] = useState(null);
   let params = useParams();
 
  
@@ -21,10 +20,7 @@ export default function Product({ url, addToCart }) {
         );
       });
   }, [params, url]);
-  console.log(product)
- if (product){
-  console.log(product.name)
- }
+
   
   return (
     <main>
