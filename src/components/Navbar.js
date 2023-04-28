@@ -65,7 +65,7 @@ export default function Navbar({ url, cart }) {
           <nav>
             <form onSubmit={handleSearch} setSearchQuery={setSearchQuery}>
               <input type="text" placeholder="Search" value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} />
-              <button type="submit" className="btn btn-outline-dark">Search</button>
+              <button type="submit" className="btn btn-outline-dark">Etsi</button>
             </form>
             {showResults && <SearchResults searchResults={searchResults} />}
           </nav>

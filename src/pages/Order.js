@@ -61,7 +61,7 @@ export default function Order({url, cart,removeFromCart,updateAmount,empty}) {
   if (finished === false) {
     return (
       <main>
-      <div>
+      <div className='ordercart'>
         <h3 className="header">Items in cart</h3>
         <table className="table">
           <tbody>
@@ -89,7 +89,7 @@ export default function Order({url, cart,removeFromCart,updateAmount,empty}) {
         {cart.length > 0 && // Render order form, if there is something in cart.
           <>
             <h3 className="header">Client information</h3>
-            <form className='ostoskoriform' onSubmit={order}>
+            <form className='orderform' onSubmit={order}>
               <div className="form-group">
                 <label>First name:</label>
                 <input className="form-control" onChange={e => setFirstname(e.target.value)}/>
@@ -111,7 +111,7 @@ export default function Order({url, cart,removeFromCart,updateAmount,empty}) {
                 <input className="form-control" onChange={e => setCity(e.target.value)}/>
               </div>
               <div className="buttons">
-                <button className="btn btn-primary">Order</button>
+                <button className="btn btn-dark">Order</button>
               </div>
             </form>
             </>

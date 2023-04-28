@@ -143,9 +143,14 @@ a {
   font-size: large;
 }
 
-.ostoskoriform {
+.orderform {
   margin-top: 20px;
   margin-bottom: 50px;
+}
+
+.ordercart {
+  background-color: rgb(255, 255, 255, 0.65);
+  padding:1px 10px 1px 10px;
 }
 
 .buttons {
