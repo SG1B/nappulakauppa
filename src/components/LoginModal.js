@@ -33,7 +33,7 @@ function LoginWindow({ onClose }) {
     <div className="login-window-wrapper">
       <div className="login-window">
         <div className="login-header">
-          <h2>Sisään kirjautuminen</h2>
+          <h2>Kirjautuminen</h2>
           <button className="btn btn-outline-dark" onClick={onClose}>
             X
           </button>
