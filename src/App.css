@@ -253,11 +253,40 @@ a {
 }
 
 @media only screen and (max-width: 1550px) {
-#sidebar {
-  width: 100px;
-}
-#sidebar .container-fluid  {
-  padding: 0px;
+  #sidebar {
+    width: 100px;
+  }
+
+  #sidebar .container-fluid {
+    padding: 0px;
+  }
+
+  .navbar-toggler {
+    position: absolute;
+    top: 20px;
+    right: 5px;
+  }
+
+
 }
 
+@media only screen and (max-width: 767px) {
+  #sidebar {
+    display: none;
+  }
+
+  #navbarCollapse {
+    background-color: #EBA747;
+    border-radius: 5px;
+    align-items: center;
+  }
+
+  #navbarCollapse li,
+  #navbarCollapse input {
+    margin-bottom: 10px;
+    margin-left: 10px;
+  }
+  .products-main {
+    margin-left: 0px;
+  }
 }
