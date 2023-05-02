@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
 function LoginWindow({ onClose }) {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({ name: '', password: '' });
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -18,9 +17,11 @@ function LoginWindow({ onClose }) {
       .then((data) => {
         if (data.success) {
           // handle successful login
+          alert('Login successful');
           console.log("Login successful");
         } else {
           // handle login error
+          alert('Login failed');
           console.log(data.error);
         }
       })
@@ -32,28 +33,16 @@ function LoginWindow({ onClose }) {
     <div className="login-window-wrapper">
       <div className="login-window">
         <div className="login-header">
-          <h2>Kirjautuminen</h2>
+          <h2>Login</h2>
           <button className="close-btn" onClick={onClose}>
             X
           </button>
         </div>
         <div className="login-body">
           <form onSubmit={handleFormSubmit}>
-            <input
-              type="text"
-              name="username"
-              placeholder="Käyttäjätunnus"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-            <input
-              type="password"
-              name="password"
-              placeholder="Salasana"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <button className="btn btn-outline-dark" type="submit">Sisään</button>
+          <input type="text" id="name" name="name" value={formData.name} onChange={(event) => setFormData({ ...formData, name: event.target.value })} />
+          <input type="password" id="password" name="password" value={formData.password} onChange={(event) => setFormData({ ...formData, password: event.target.value })} />
+            <button type="submit">Submit</button>
           </form>
         </div>
       </div>
