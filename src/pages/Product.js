@@ -27,10 +27,10 @@ export default function Product({ url, addToCart }) {
     <div className="row">
       {product ? (
         <>
-          <div className='container col-sm-4'>
+          <div className='container col-lg-4'>
             <img class="product-image" src={product.image} alt={product.name} />
           </div>
-          <div className='container product-container col-sm-4'>
+          <div className='container product-container col-lg-4'>
             <h3>{product.name}</h3>
             <p>{product.kuvaus}</p>
             <p className='price'>{product.price} €</p>
