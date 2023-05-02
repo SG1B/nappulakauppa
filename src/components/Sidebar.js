@@ -7,7 +7,7 @@ export default function Navbar({ url }) {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    axios.get(url + 'products/getcategories.php')
+    axios.get('https://www.students.oamk.fi/~c2pima00/getcategories.php')
       .then(response => {
         const json = response.data;
         setCategories(json);
