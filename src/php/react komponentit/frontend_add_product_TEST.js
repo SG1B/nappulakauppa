@@ -1,3 +1,5 @@
+/* LISÄTTY VERSIO: SRC -> admin -> ManageProducts
+
 if (addingProduct) {
     return (
         <>
@@ -42,4 +44,4 @@ if (addingProduct) {
             </form>
         </>
     )
-}
+}*/

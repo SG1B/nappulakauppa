@@ -38,6 +38,9 @@ export default function Navbar({ url }) {
           <li className="nav-item">
             <Link className="nav-link" to="/about">About</Link>
           </li>
+          <li>
+            <Link to="/admin">Admin</Link>
+          </li>
         </ul>
       </div>
     </div>

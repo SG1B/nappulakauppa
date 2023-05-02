@@ -1,4 +1,4 @@
-//viimeinen
+/* Korjattu versio: src -> pages -> Admin.js
 
 import React,{useState,useEffect} from 'react';
 import axios from 'axios';
@@ -41,4 +41,4 @@ function saveProduct(e) {
     }).catch(error => {
         alert(error.response === undefined ? error : error.response.data.error);
     });
-}}
+}}*/

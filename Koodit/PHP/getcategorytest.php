@@ -1,7 +1,6 @@
 <?php
-/*
-require_once '../Testailua%20basic/index.php';
-require_once '../Testailua%20basic/headers.php';
+require_once '../index.php';
+require_once '../headers.php';
 
 $uri = parse_url(filter_input(INPUT_SERVER, 'PATH_INFO'),PHP_URL_PATH);
 $parameters = explode('/',$uri);
@@ -26,4 +25,4 @@ try {
 
 catch (PDOException $pdoex) {
     returnError($pdoex);
-}*/
+}
