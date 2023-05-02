@@ -29,14 +29,14 @@ function RegistrationPopup() {
 
   return (
     <>
-      <button onClick={() => setIsOpen(true)}>Rekisteröidy</button>
+      <button className='btn btn-outline-dark' onClick={() => setIsOpen(true)}>Rekisteröidy</button>
       {isOpen && (
         <div className="registration-popup">
           <div className="login-window-wrapper">
-            <div className="login-window">
+            <div id="registration-wrapper" className="login-window">
               <div className="login-header">
                 <h2>Rekisteröidy</h2>
-                <button className="close-btn" onClick={() => setIsOpen(false)}>X</button>
+                <button className="btn btn-outline-dark" onClick={() => setIsOpen(false)}>X</button>
               </div>
               <div className="login-body">
                 <form onSubmit={handleFormSubmit}>
@@ -49,9 +49,8 @@ function RegistrationPopup() {
                   <label htmlFor="password">Salasana:</label><br />
                   <input type="password" id="password" name="password" value={formData.password} onChange={(event) => setFormData({ ...formData, password: event.target.value })} />
                   <br />
-                  <br />
-                  <button type="submit">Rekisteröidy</button>
-                  <button type="button" onClick={() => setIsOpen(false)}>Sulje</button>
+                  <button className='btn btn-outline-dark' type="submit">Rekisteröidy</button>
+                  <button className='btn btn-outline-dark' type="button" onClick={() => setIsOpen(false)}>Sulje</button>
                 </form>
               </div>
             </div>

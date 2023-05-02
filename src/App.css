@@ -218,6 +218,10 @@ a {
   margin-bottom: 20px;
 }
 
+#registration-wrapper {
+  height: 400px;
+}
+
 .close-btn {
   background-color: transparent;
   border: none;
