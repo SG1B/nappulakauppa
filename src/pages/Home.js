@@ -7,7 +7,7 @@ export default function Home({url}) {
   
 
   useEffect(() => {
-    axios.get(url+'products/getallproducts.php')
+    axios.get('https://www.students.oamk.fi/~c2pima00/getProducts.php')
       .then((response) => {
         const data = response.data;
         setProducts(data);
