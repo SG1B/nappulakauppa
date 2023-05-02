@@ -51,7 +51,7 @@ function RegistrationPopup() {
                   <br />
                   <br />
                   <button className="btn btn-outline-dark" type="submit">Rekisteröidy</button>
-                  <button className="btn btn-outline-dark" type="button" onClick={() => setIsOpen(false)}>Sulje</button>
+                  
                 </form>
               </div>
             </div>
