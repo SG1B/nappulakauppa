@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import Cart from './Cart';
 import SearchResults from './SearchResults';
+import RegisterPopUp from './RegisterationPopUp'; // Import the RegisterButton component
 import LoginButton from './LoginButton'; // Import the LoginButton component
 import logo from '../assets/banneri_1_ilmanpuskaa.png';
 
@@ -59,7 +60,10 @@ export default function Navbar({ url, cart }) {
               <Cart cart={cart} />
             </li>
             <li className='nav-item'>
-              <LoginButton /> {/* Add the LoginButton component */}
+              <RegisterPopUp /> 
+            </li>
+            <li className='nav-item'>
+              <LoginButton /> 
             </li>
           </ul>
           <nav>

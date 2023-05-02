@@ -16,6 +16,7 @@ import SearchPage from './pages/SearchPage';
 import SearchQueries from './components/SearchQueries';
 import LoginButton from './components/LoginButton';
 import LoginModal from './components/LoginModal';
+import RegisterationPopUp from './components/RegisterationPopUp';
 
 const URL = 'http://localhost/nappulakauppa/';
 
@@ -70,6 +71,8 @@ function App() {
           <Route path='/product/:productId' element={<Product url={URL} />} />
           <Route path='/order' element={<Order cart={cart} removeFromCart={removeFromCart} updateAmount={updateAmount} />} />
           <Route path='/about' element={<About />} />
+
+          <Route path='/RegisterationPopUp' element={<RegisterationPopUp />} />
           <Route path='/login' element={<LoginButton />} />
           <Route path='/loginmodal' element={<LoginModal />} />
           <Route path='/search/:query' element={<SearchResults />} />
