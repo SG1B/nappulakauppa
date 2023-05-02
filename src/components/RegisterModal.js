@@ -39,7 +39,7 @@ function RegistrationWindow() {
         <div className="login-body">
           <label htmlFor="name">Käyttäjänimi:</label>
           <input type="text" id="name" name="name" value={formData.name} onChange={(event) => setFormData({ ...formData, name: event.target.value })} />
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email">Sähköposti:</label>
           <input type="email" id="email" name="email" value={formData.email} onChange={(event) => setFormData({ ...formData, email: event.target.value })} />
           <label htmlFor="password">Salasana:</label>
           <input type="password" id="password" name="password" value={formData.password} onChange={(event) => setFormData({ ...formData, password: event.target.value })} />

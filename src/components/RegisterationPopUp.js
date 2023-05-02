@@ -23,35 +23,43 @@ function RegistrationPopup() {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    submitRegistrationForm(new FormData(event.target));
-    setIsOpen(false);
+    const form = event.target;
+
+    // Check if all fields have been filled
+    const isFormValid = form.checkValidity();
+    form.reportValidity();
+
+    if (isFormValid) {
+      submitRegistrationForm(new FormData(form));
+      alert('Rekisteröityminen onnistui!');
+      setIsOpen(false);
+    }
   }
 
   return (
     <>
-      <button onClick={() => setIsOpen(true)}>Rekisteröidy</button>
+      <button className='btn btn-outline-dark' onClick={() => setIsOpen(true)}>Rekisteröidy</button>
       {isOpen && (
         <div className="registration-popup">
           <div className="login-window-wrapper">
-            <div className="login-window">
+            <div id="registration-wrapper" className="login-window">
               <div className="login-header">
                 <h2>Rekisteröidy</h2>
-                <button className="close-btn" onClick={() => setIsOpen(false)}>X</button>
+                <button className="btn btn-outline-dark" onClick={() => setIsOpen(false)}>X</button>
               </div>
               <div className="login-body">
                 <form onSubmit={handleFormSubmit}>
                   <label htmlFor="name">Käyttäjänimi:</label>
-                  <input type="text" id="name" name="name" value={formData.name} onChange={(event) => setFormData({ ...formData, name: event.target.value })} />
+                  <input type="text" id="name" name="name" value={formData.name} onChange={(event) => setFormData({ ...formData, name: event.target.value })} required />
                   <br />
-                  <label htmlFor="email">Email:</label><br/>
-                  <input type="email" id="email" name="email" value={formData.email} onChange={(event) => setFormData({ ...formData, email: event.target.value })} />
+                  <label htmlFor="email">Sähköposti:</label><br/>
+                  <input type="email" id="email" name="email" value={formData.email} onChange={(event) => setFormData({ ...formData, email: event.target.value })} required />
                   <br />
                   <label htmlFor="password">Salasana:</label><br />
-                  <input type="password" id="password" name="password" value={formData.password} onChange={(event) => setFormData({ ...formData, password: event.target.value })} />
+                  <input type="password" id="password" name="password" value={formData.password} onChange={(event) => setFormData({ ...formData, password: event.target.value })} required />
                   <br />
                   <br />
-                  <button type="submit">Rekisteröidy</button>
-                  <button type="button" onClick={() => setIsOpen(false)}>Sulje</button>
+                  <button className="btn btn-outline-dark" type="submit">Rekisteröidy</button>
                 </form>
               </div>
             </div>

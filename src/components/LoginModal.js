@@ -33,16 +33,20 @@ function LoginWindow({ onClose }) {
     <div className="login-window-wrapper">
       <div className="login-window">
         <div className="login-header">
-          <h2>Login</h2>
-          <button className="close-btn" onClick={onClose}>
+          <h2>Kirjautuminen</h2>
+          <button className="btn btn-outline-dark" onClick={onClose}>
             X
           </button>
         </div>
         <div className="login-body">
           <form onSubmit={handleFormSubmit}>
+          <label>Käyttäjätunnus:</label>
           <input type="text" id="name" name="name" value={formData.name} onChange={(event) => setFormData({ ...formData, name: event.target.value })} />
+          <br />
+          <label>Salasana:</label>
+          <br />
           <input type="password" id="password" name="password" value={formData.password} onChange={(event) => setFormData({ ...formData, password: event.target.value })} />
-            <button type="submit">Submit</button>
+            <button className="btn btn-outline-dark" type="submit">Kirjaudu sisään</button>
           </form>
         </div>
       </div>
