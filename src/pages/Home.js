@@ -1,27 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
-export default function Home({url}) {
+export default function Home({ url }) {
+  const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
-  
 
+ 
   useEffect(() => {
-    axios.get(url+'products/getallproducts.php')
+    axios.get('https://www.students.oamk.fi/~c2pima00/getProducts.php')
       .then((response) => {
         const data = response.data;
         setProducts(data);
+        setLoading(false);
       })
       .catch((error) => {
         console.log(error);
+        setLoading(false);
       });
   }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  const filteredProducts = products.filter(product => product.image && product.image.length > 0 && product.kuvaus && product.kuvaus.length > 0);
+
+  console.log('Filtered products:', filteredProducts);
+
   return (
     <main>
 
       <div class="container">
 
-{/* Karuselli alkaa */}
+        {/* Karuselli alkaa */}
         <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -35,7 +48,7 @@ export default function Home({url}) {
               <img class='d-block img-fluid' src='https://www.students.oamk.fi/~n2raro00/Projekti_kuvat/tervetuloabanneri.jpg'></img>
               <div class="container">
                 <div class="carousel-caption text-start">
-                
+
                 </div>
               </div>
             </div>
@@ -43,7 +56,7 @@ export default function Home({url}) {
               <img class='d-block img-fluid' src='https://www.students.oamk.fi/~n2raro00/Projekti_kuvat/Umo_banner.png'></img>
               <div class="container">
                 <div class="carousel-caption">
-                 
+
                 </div>
               </div>
             </div>
@@ -51,7 +64,7 @@ export default function Home({url}) {
               <img class='d-block img-fluid' src='https://www.students.oamk.fi/~n2raro00/Projekti_kuvat/bag_banneri_ver2.png'></img>
               <div class="container">
                 <div class="carousel-caption">
-                 
+
                 </div>
               </div>
             </div>
@@ -59,15 +72,15 @@ export default function Home({url}) {
               <img class='d-block img-fluid' src='https://www.students.oamk.fi/~n2raro00/Projekti_kuvat/Motooki_banner.png'></img>
               <div class="container">
                 <div class="carousel-caption">
-                 
+
                 </div>
               </div>
             </div>
             <div class="carousel-item">
-            <img class='d-block img-fluid' src='https://www.students.oamk.fi/~n2raro00/Projekti_kuvat/Tokaido_banner.png'></img>
+              <img class='d-block img-fluid' src='https://www.students.oamk.fi/~n2raro00/Projekti_kuvat/Tokaido_banner.png'></img>
               <div class="container">
                 <div class="carousel-caption text-end">
-                
+
                 </div>
               </div>
             </div>
@@ -85,12 +98,15 @@ export default function Home({url}) {
         {/* Tuotekuvat */}
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
           <div class="col">
-            <div class="card shadow-sm"><img src='https://www.students.oamk.fi/~n2raro00/Lautapelit/7%20wonders/wondiers.png'></img>
+            <div class="card shadow-sm">
+              {filteredProducts.length > 0 && (
+                <img src={filteredProducts[0].image} alt={filteredProducts[0].name} />)}
+
               <div class="card-body">
-                <p class="card-text">is is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text kuvaus">{filteredProducts[0].kuvaus}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-dark">View</button>
+                  <Link to={`/product/${1}`}><button className="btn btn-sm btn-outline-dark">View</button></Link>
                   </div>
                 </div>
               </div>
@@ -98,12 +114,15 @@ export default function Home({url}) {
           </div>
           <div class="col">
             <div class="card shadow-sm">
-              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+              {filteredProducts.length > 0 && (
+                <img src={filteredProducts[1].image} alt={filteredProducts[1].name} />)}
+
               <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text kuvaus">{filteredProducts[1].kuvaus}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-dark">View</button>
+                  <Link to={`/product/${2}`}><button className="btn btn-sm btn-outline-dark">View</button></Link>
                   </div>
                 </div>
               </div>
@@ -217,7 +236,7 @@ export default function Home({url}) {
           </div>
         </div>
       </div>
-    
+
 
 
     </main>
