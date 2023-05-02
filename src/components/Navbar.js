@@ -64,7 +64,7 @@ export default function Navbar({ url, cart }) {
           </ul>
           <nav>
             <form onSubmit={handleSearch} setSearchQuery={setSearchQuery}>
-              <input type="text" placeholder="Search" value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} />
+              <input type="text" placeholder="Kirjoitan tähän..." value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} />
               <button type="submit" className="btn btn-outline-dark">Etsi</button>
             </form>
             {showResults && <SearchResults searchResults={searchResults} />}

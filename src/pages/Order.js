@@ -62,7 +62,7 @@ export default function Order({url, cart,removeFromCart,updateAmount,empty}) {
     return (
       <main>
       <div className='ordercart'>
-        <h3 className="header">Items in cart</h3>
+        <h3 className="header">Korin tuotteet:</h3>
         <table className="table">
           <tbody>
             {cart.map((product,index) => {
@@ -74,7 +74,7 @@ export default function Order({url, cart,removeFromCart,updateAmount,empty}) {
                   <td>
                     <input ref={inputs[index]} style={{width: '60px'}} value={product.amount} onChange={e => changeAmount(e,product,index)} />
                   </td>
-                  <td><a href="#" onClick={() => removeFromCart(product)}>Delete</a></td>
+                  <td><a href="#" onClick={() => removeFromCart(product)}>Poista</a></td>
                 </tr>
               )
               })}
@@ -88,30 +88,30 @@ export default function Order({url, cart,removeFromCart,updateAmount,empty}) {
         </table>
         {cart.length > 0 && // Render order form, if there is something in cart.
           <>
-            <h3 className="header">Client information</h3>
+            <h3 className="header">Tilaustiedot:</h3>
             <form className='orderform' onSubmit={order}>
               <div className="form-group">
-                <label>First name:</label>
+                <label>Etunimi:</label>
                 <input className="form-control" onChange={e => setFirstname(e.target.value)}/>
               </div>
               <div className="form-group">
-                <label>Last name:</label>
+                <label>Sukunimi:</label>
                 <input className="form-control" onChange={e => setLastname(e.target.value)}/>
               </div>
               <div className="form-group">
-                <label>Address:</label>
+                <label>Osoite:</label>
                 <input className="form-control" onChange={e => setAddress(e.target.value)}/>
               </div>
               <div className="form-group">
-                <label>Postal code</label>
+                <label>Postinumero:</label>
                 <input className="form-control" onChange={e => setZip(e.target.value)}/>
               </div>
               <div className="form-group">
-                <label>City</label>
+                <label>Kaupunki:</label>
                 <input className="form-control" onChange={e => setCity(e.target.value)}/>
               </div>
               <div className="buttons">
-                <button className="btn btn-dark">Order</button>
+                <button className="btn btn-dark">Tilaa</button>
               </div>
             </form>
             </>
