@@ -6,7 +6,7 @@ function LoginButton() {
 
   return (
     <div>
-      <button className='btn btn-outline-dark' onClick={() => setShowLogin(true)}>Kirjautuminen</button>
+      <button className='btn btn-outline-dark' onClick={() => setShowLogin(true)}>Log in</button>
       {showLogin && (
         <div className="login-overlay">
           <div className="login-window">
