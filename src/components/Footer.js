@@ -7,7 +7,7 @@ export default function Footer() {
       <div className='container-fluid-footer'>
         <span>Verkkokauppa avoinna 24/7</span>
         <br></br>
-        <span>© 2023 Nappulakauppa.fi SG1-B</span>
+        <span>© 2023 Nappulat.fi</span>
       </div>
     </footer>
   )
