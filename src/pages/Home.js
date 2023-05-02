@@ -101,7 +101,6 @@ export default function Home({ url }) {
             <div class="card shadow-sm">
               {filteredProducts.length > 0 && (
                 <img src={filteredProducts[0].image} alt={filteredProducts[0].name} />)}
-
               <div class="card-body">
                 <p class="card-text kuvaus">{filteredProducts[0].kuvaus}</p>
                 <div class="d-flex justify-content-between align-items-center">
@@ -114,10 +113,7 @@ export default function Home({ url }) {
           </div>
           <div class="col">
             <div class="card shadow-sm">
-
-              {filteredProducts.length > 0 && (
-                <img src={filteredProducts[1].image} alt={filteredProducts[1].name} />)}
-
+              {filteredProducts.length > 0 && (<img src={filteredProducts[1].image} alt={filteredProducts[1].name} />)}
               <div class="card-body">
                 <p class="card-text kuvaus">{filteredProducts[1].kuvaus}</p>
                 <div class="d-flex justify-content-between align-items-center">
@@ -130,106 +126,91 @@ export default function Home({ url }) {
           </div>
           <div class="col">
             <div class="card shadow-sm">
-              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+              {filteredProducts.length > 0 && (<img src={filteredProducts[2].image} alt={filteredProducts[2].name} />)}
               <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text kuvaus">{filteredProducts[2].kuvaus}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-dark">View</button>
+                  <Link to={`/product/${3}`}><button className="btn btn-sm btn-outline-dark">View</button></Link>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card shadow-sm">
-              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-dark">View</button>
-
-                  </div>
-
                 </div>
               </div>
             </div>
           </div>
           <div class="col">
             <div class="card shadow-sm">
-              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+              {filteredProducts.length > 0 && (<img src={filteredProducts[3].image} alt={filteredProducts[3].name} />)}
               <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text kuvaus">{filteredProducts[3].kuvaus}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-dark">View</button>
-
+                  <Link to={`/product/${4}`}><button className="btn btn-sm btn-outline-dark">View</button></Link>
                   </div>
-
                 </div>
               </div>
             </div>
           </div>
           <div class="col">
             <div class="card shadow-sm">
-              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+              {filteredProducts.length > 0 && (<img src={filteredProducts[4].image} alt={filteredProducts[4].name} />)}
               <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text kuvaus">{filteredProducts[4].kuvaus}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-dark">View</button>
-
+                  <Link to={`/product/${5}`}><button className="btn btn-sm btn-outline-dark">View</button></Link>
                   </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card shadow-sm">
-              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-dark">View</button>
-
-                  </div>
-
                 </div>
               </div>
             </div>
           </div>
           <div class="col">
             <div class="card shadow-sm">
-              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+              {filteredProducts.length > 0 && (<img src={filteredProducts[5].image} alt={filteredProducts[5].name} />)}
               <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text kuvaus">{filteredProducts[5].kuvaus}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-dark">View</button>
-
+                  <Link to={`/product/${6}`}><button className="btn btn-sm btn-outline-dark">View</button></Link>
                   </div>
-
                 </div>
               </div>
             </div>
           </div>
           <div class="col">
             <div class="card shadow-sm">
-              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+              {filteredProducts.length > 0 && (<img src={filteredProducts[6].image} alt={filteredProducts[6].name} />)}
               <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text kuvaus">{filteredProducts[6].kuvaus}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-dark">View</button>
-                    {/* Tuotekuvat */}
-
+                  <Link to={`/product/${7}`}><button className="btn btn-sm btn-outline-dark">View</button></Link>
                   </div>
-
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+              {filteredProducts.length > 0 && (<img src={filteredProducts[7].image} alt={filteredProducts[7].name} />)}
+              <div class="card-body">
+                <p class="card-text kuvaus">{filteredProducts[7].kuvaus}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                  <Link to={`/product/${8}`}><button className="btn btn-sm btn-outline-dark">View</button></Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+              {filteredProducts.length > 0 && (<img src={filteredProducts[8].image} alt={filteredProducts[8].name} />)}
+              <div class="card-body">
+                <p class="card-text kuvaus">{filteredProducts[8].kuvaus}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                  <Link to={`/product/${9}`}><button className="btn btn-sm btn-outline-dark">View</button></Link>
+                  </div>
                 </div>
               </div>
             </div>
