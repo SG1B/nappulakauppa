@@ -248,6 +248,12 @@ a {
   margin-right: 15%;
 }
 
-/* @media  and (min-width: 1070px) {
+@media only screen and (max-width: 1550px) {
+#sidebar {
+  width: 100px;
+}
+#sidebar .container-fluid  {
+  padding: 0px;
+}
 
-} */
+}

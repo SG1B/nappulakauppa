@@ -39,7 +39,7 @@ export default function Products({ url, addToCart }) {
           </div>
           <div className="row">
             {products.map(product => (
-              <div className="col-sm-4 single-item" key={product.id}>
+              <div className="col-lg-4 single-item" key={product.id}>
                 <div className="card shadow-sm">
                   <img src={product.image} alt={product.name} />
                   <div className="card-body">
