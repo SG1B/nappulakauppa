@@ -42,7 +42,9 @@ function LoginWindow({ onClose }) {
           <form onSubmit={handleFormSubmit}>
           <label>Käyttäjätunnus:</label>
           <input type="text" id="name" name="name" value={formData.name} onChange={(event) => setFormData({ ...formData, name: event.target.value })} />
+          <br />
           <label>Salasana:</label>
+          <br />
           <input type="password" id="password" name="password" value={formData.password} onChange={(event) => setFormData({ ...formData, password: event.target.value })} />
             <button className="btn btn-outline-dark" type="submit">Kirjaudu sisään</button>
           </form>
