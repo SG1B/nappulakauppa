@@ -17,7 +17,7 @@ import SearchQueries from './components/SearchQueries';
 import LoginButton from './components/LoginButton';
 import LoginModal from './components/LoginModal';
 //lisäykset admin
-import Admin from './pages/Admin'
+import Admin from './admin/Admin'
 import ManageCategories from './admin/ManageCategories';
 import ManageProducts from './admin/ManageProducts';
 
