@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import ManageProducts from '../components/ManageProducts'
 
 export default function Admin() {
   return (
@@ -11,9 +12,9 @@ export default function Admin() {
         <li>
           <Link to='/admin_ManageCategories'>Hallinnoi kategorioita</Link>
         </li>
-{/*         <li>
-          <Link to='/admin_ManageProducts'>Hallinnoi tuotteita</Link>
-        </li> */}
+        <li >
+              <ManageProducts />
+        </li>
       </ul>
       </div>
       </main>
