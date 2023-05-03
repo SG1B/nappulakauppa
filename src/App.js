@@ -5,7 +5,6 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import SearchResults from './components/SearchResults';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import Product from './pages/Product';
@@ -13,8 +12,6 @@ import Order from './pages/Order';
 import About from './pages/About';
 import Admin from './pages/Admin';
 import NotFound from './pages/NotFound';
-import SearchPage from './pages/SearchPage';
-import SearchQueries from './components/SearchQueries';
 import LoginButton from './components/LoginButton';
 import LoginModal from './components/LoginModal';
 import RegisterationPopUp from './components/RegisterationPopUp';
@@ -71,15 +68,15 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/products/:categoryId' element={<Products url={URL} addToCart={addToCart} />} />
+          <Route path='/search/:searchPharase' element={<Products url={URL}  />} />
           <Route path='/product/:productId' element={<Product url={URL} addToCart={addToCart} />} />
+          
           <Route path='/order' element={<Order cart={cart} removeFromCart={removeFromCart} updateAmount={updateAmount} />} />
           <Route path='/about' element={<About />} />
           <Route path='/RegisterationPopUp' element={<RegisterationPopUp />} />
           <Route path='/login' element={<LoginButton />} />
           <Route path='/loginmodal' element={<LoginModal />} />
-          <Route path='/search/:query' element={<SearchResults />} />
-          <Route path='/searchqueries' element={<SearchQueries />} />
-          <Route path='/searchpage' element={<SearchPage />} />
+          <Route path='/NotFound' element={<NotFound />} />
           <Route path='*' element={<NotFound />} />
           <Route path='/admin' element={<Admin />} />
           <Route path='/admin_managecategories' element={<ManageCategories />} />

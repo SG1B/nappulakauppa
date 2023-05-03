@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 export default function Product({ url, addToCart }) {
@@ -8,18 +8,14 @@ export default function Product({ url, addToCart }) {
 
  
   useEffect(() => {
-    axios
-      .get(`${url}products/getproduct.php/${params.productId}`)
+    axios.get(url + 'products/getproduct.php/' + params.productId)
       .then((response) => {
         const json = response.data;
         setProduct(response.data);
+      }).catch(error => {
+        alert(error.response === undefined ? error : error.response.data.error);
       })
-      .catch((error) => {
-        alert(
-          error.response === undefined ? error : error.response.data.error
-        );
-      });
-  }, [params, url]);
+  }, [params])
 
   
   return (

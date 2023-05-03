@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react';
 import uuid from 'react-uuid';
 import axios from 'axios';
 
-export default function Order({url, cart,removeFromCart,updateAmount,empty,e}) {
+export default function Order({url, cart,removeFromCart,updateAmount,empty}) {
   const [inputs, ] = useState([]);
   const [inputIndex, setInputIndex] = useState(-1);
 
@@ -36,7 +36,7 @@ export default function Order({url, cart,removeFromCart,updateAmount,empty,e}) {
       city: city,
       cart: cart,
     });
-    axios.post("https://www.students.oamk.fi/~c2pima00/save.php",json,{
+    axios.post(url + 'order/save.php',json,{
       headers: {
         'Accept': 'application/json',
         'Content-Type' : 'application/json'
@@ -60,9 +60,8 @@ export default function Order({url, cart,removeFromCart,updateAmount,empty,e}) {
 
   if (finished === false) {
     return (
-      <main>
-      <div className='ordercart'>
-        <h3 className="header">Korin tuotteet:</h3>
+      <div>
+        <h3 className="header">Items in cart</h3>
         <table className="table">
           <tbody>
             {cart.map((product,index) => {
@@ -74,7 +73,7 @@ export default function Order({url, cart,removeFromCart,updateAmount,empty,e}) {
                   <td>
                     <input ref={inputs[index]} style={{width: '60px'}} value={product.amount} onChange={e => changeAmount(e,product,index)} />
                   </td>
-                  <td><a href="#" onClick={() => removeFromCart(product)}>Poista</a></td>
+                  <td><a href="/#" onClick={() => removeFromCart(product)}>Delete</a></td>
                 </tr>
               )
               })}
@@ -88,42 +87,37 @@ export default function Order({url, cart,removeFromCart,updateAmount,empty,e}) {
         </table>
         {cart.length > 0 && // Render order form, if there is something in cart.
           <>
-            <h3 className="header">Tilaustiedot:</h3>
-            <form className='orderform' onSubmit={order}>
+            <h3 className="header">Client information</h3>
+            <form onSubmit={order}>
               <div className="form-group">
-                <label>Etunimi:</label>
+                <label>First name:</label>
                 <input className="form-control" onChange={e => setFirstname(e.target.value)}/>
               </div>
               <div className="form-group">
-                <label>Sukunimi:</label>
+                <label>Last name:</label>
                 <input className="form-control" onChange={e => setLastname(e.target.value)}/>
               </div>
               <div className="form-group">
-                <label>Osoite:</label>
+                <label>Address:</label>
                 <input className="form-control" onChange={e => setAddress(e.target.value)}/>
               </div>
               <div className="form-group">
-                <label>Postinumero:</label>
+                <label>Postal code</label>
                 <input className="form-control" onChange={e => setZip(e.target.value)}/>
               </div>
               <div className="form-group">
-                <label>Kaupunki:</label>
+                <label>City</label>
                 <input className="form-control" onChange={e => setCity(e.target.value)}/>
               </div>
               <div className="buttons">
-                <button type='submit' className="btn btn-dark">Tilaa</button>
+                <button className="btn btn-primary">Order</button>
               </div>
             </form>
             </>
           }
       </div>
-      </main>
     )
   } else {
-    return (
-    <main>
-    <h3>Thank you for your order</h3>
-    </main>
-    );
+    return (<h3>Thank you for your order</h3>);
   }
 }

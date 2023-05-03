@@ -1,44 +1,36 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import Cart from './Cart';
-import SearchResults from './SearchResults';
-import RegisterPopUp from './RegisterationPopUp'; // Import the RegisterButton component
-import LoginButton from './LoginButton'; // Import the LoginButton component
+import RegisterPopUp from './RegisterationPopUp';
+import LoginButton from './LoginButton';
 import logo from '../assets/banneri_1_ilmanpuskaa.png';
+import { Link, useNavigate } from 'react-router-dom';
 
-import { Link } from 'react-router-dom';
 
-export default function Navbar({ url, cart }) {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [showResults, setShowResults] = useState(false);
+export default function Navbar({url,cart}) {
+  const [categories,setCategories] = useState([]);
+  const [search, setSearch] = useState('');
+  const [results, setResults] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios.get(url + 'products/getcategories.php')
       .then((response) => {
         const json = response.data;
         setCategories(json);
-      }).catch(error => {
+      }).catch (error => {
         alert(error.response === undefined ? error : error.response.data.error);
       })
   }, [])
 
-  const handleSearch = (event) => {
-    event.preventDefault();
-    if (searchQuery.length > 0) {
-      axios.get(`${url}search.php?q=${searchQuery}`)
-        .then(response => {
-          setSearchResults(response.data);
-          setShowResults(true);
-        })
-        .catch(error => {
-          console.error(error);
-        });
-    } else {
-      setShowResults(false);
-    }
+  function executeSearch(e) {
+    if (e.charCode === 13) {
+      e.preventDefault();
+      navigate('/products/' + search);
+    } 
   }
+  
+
 
   return (
     <nav className="navbar navbar-expand-md navbar-dark fixed-top">
@@ -52,6 +44,11 @@ export default function Navbar({ url, cart }) {
         </button>
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <ul className="navbar-nav me-auto mb-2 mb-md-0">
+            {categories.map(category => (
+              <li className="nav-item" key={category.id}>
+                <Link className="nav-link" to={`/category/${category.id}`}>{category.name}</Link>
+              </li>
+            ))}
           </ul>
           <ul className='navbar-nav ml-auto'>
             <li className='nav-item'>
@@ -63,14 +60,21 @@ export default function Navbar({ url, cart }) {
             <li className='nav-item'>
               <LoginButton />
             </li>
+            
+            <form className="form-inline my-2 my-lg-0">
+            <input 
+              value={search} 
+              onChange={(e) => setSearch(e.target.value)} 
+              onKeyPress={(e) => executeSearch(e)} 
+              className="form-control mr-sm-2" 
+              type="search" 
+              placeholder="Search" 
+              aria-label="Search" />
+          </form>
+          
+            
           </ul>
-          <nav>
-            <form onSubmit={handleSearch}>
-              <input type="text" placeholder="Kirjoitan tähän..." value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} />
-              <button type="submit" className="btn btn-outline-dark">Etsi</button>
-            </form>
-            {showResults && <SearchResults searchResults={searchResults} />}
-          </nav>
+          
         </div>
       </div>
     </nav>
