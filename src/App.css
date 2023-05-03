@@ -242,6 +242,23 @@ a {
   width: 35%;
 }
 
+.admin {
+  border: #EBA747 solid 2.5px;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 20px;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.admin-button {
+  margin-bottom: 20px;
+}
+
 .about>h3,
 .about>h4 {
   text-align: center;

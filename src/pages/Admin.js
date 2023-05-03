@@ -6,11 +6,11 @@ export default function Admin() {
   return (
     <>
       <main>
-      <div className='about'>
+      <div className='admin'>
       <h3 style={{display: "flex", alignItems: "center"}}>Admin</h3>
       <ul>
-        <li>
-          <Link to='/admin_ManageCategories'>Hallinnoi kategorioita</Link>
+        <li className='admin-button'>
+          <Link to='/admin_ManageCategories'><button className="btn btn-sm btn-outline-dark">Hallinnoi kategorioita</button></Link>
         </li>
         <li >
               <ManageProducts />
