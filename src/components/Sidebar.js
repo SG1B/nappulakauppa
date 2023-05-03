@@ -22,11 +22,11 @@ export default function Navbar({ url }) {
       <div className="container-fluid">
         <ul style={{ listStyleType: "none", padding: 0 }}>
           <li className="nav-item" >
-            <Link className="nav-link" to="/">Home</Link>
+            <Link className="nav-link" to="/">Etusivu</Link>
           </li>
           <li className='nav-item dropdown'>
             <a className='nav-link dropdown-toggle' href="#" id="dropdown01"
-              data-bs-toggle="dropdown" aria-expanded="false">Products</a>
+              data-bs-toggle="dropdown" aria-expanded="false">Tuotteet</a>
             <ul className='dropdown-menu' aria-labelledby='dropdown01'>
               {categories.map(category => (
                 <li key={category.id}>
@@ -36,7 +36,7 @@ export default function Navbar({ url }) {
             </ul>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/about">About</Link>
+            <Link className="nav-link" to="/about">Tietoja</Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/admin">Admin</Link>

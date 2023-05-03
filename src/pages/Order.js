@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react';
 import uuid from 'react-uuid';
 import axios from 'axios';
 
-export default function Order({url, cart,removeFromCart,updateAmount,empty,e}) {
+export default function Order({url, cart,removeFromCart,updateAmount,empty}) {
   const [inputs, ] = useState([]);
   const [inputIndex, setInputIndex] = useState(-1);
 
