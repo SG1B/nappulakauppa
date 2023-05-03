@@ -4,7 +4,7 @@ function SearchQueries() {
   const [queries, setQueries] = useState([]);
 
   useEffect(() => {
-    fetch('/products/search_queries.php')
+    fetch('/search_queries.php')
       .then(response => response.json())
       .then(data => setQueries(data))
       .catch(error => console.error(error));

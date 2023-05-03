@@ -38,7 +38,7 @@ export default function Navbar({ url }) {
           <li className="nav-item">
             <Link className="nav-link" to="/about">About</Link>
           </li>
-          <li>
+          <li className="nav-item">
             <Link className="nav-link" to="/admin">Admin</Link>
           </li>
         </ul>

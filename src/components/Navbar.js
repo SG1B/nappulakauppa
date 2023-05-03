@@ -13,7 +13,6 @@ export default function Navbar({ url, cart }) {
   const [searchResults, setSearchResults] = useState([]);
   const [categories, setCategories] = useState([]);
   const [showResults, setShowResults] = useState(false);
-  
 
   useEffect(() => {
     axios.get(url + 'products/getcategories.php')
@@ -39,13 +38,12 @@ export default function Navbar({ url, cart }) {
     } else {
       setShowResults(false);
     }
-    
   }
 
   return (
     <nav className="navbar navbar-expand-md navbar-dark fixed-top">
       <Link to="/">
-      <img src={logo} alt="Logo" id='logo'/>
+        <img src={logo} alt="Logo" id='logo' />
       </Link>
       <div className="container-fluid">
         <Link className="navbar-brand" to="/"></Link>
@@ -60,14 +58,14 @@ export default function Navbar({ url, cart }) {
               <Cart cart={cart} />
             </li>
             <li className='nav-item'>
-              <RegisterPopUp /> 
+              <RegisterPopUp />
             </li>
             <li className='nav-item'>
-              <LoginButton /> 
+              <LoginButton />
             </li>
           </ul>
           <nav>
-            <form onSubmit={handleSearch} setSearchQuery={setSearchQuery}>
+            <form onSubmit={handleSearch}>
               <input type="text" placeholder="Kirjoitan tähän..." value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} />
               <button type="submit" className="btn btn-outline-dark">Etsi</button>
             </form>
