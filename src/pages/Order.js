@@ -43,7 +43,7 @@ export default function Order({url, cart,removeFromCart,updateAmount,empty}) {
       }
     })
     .then(() => {
-      empty();
+      /* empty(); */
       setFinished(true);
     }).catch(error => {
       alert(error.response === undefined ? error : error.response.data.error);
