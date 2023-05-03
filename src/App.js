@@ -18,9 +18,9 @@ import LoginButton from './components/LoginButton';
 import LoginModal from './components/LoginModal';
 import RegisterationPopUp from './components/RegisterationPopUp';
 //lisäykset admin
-import Admin from './admin/Admin'
-import ManageCategories from './admin/ManageCategories';
-import ManageProducts from './admin/ManageProducts';
+import Admin from './pages/Admin';
+import ManageCategories from './components/ManageCategories';
+import ManageProducts from './components/ManageProducts';
 
 const URL = 'http://localhost/nappulakauppa/';
 

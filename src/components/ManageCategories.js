@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import axios from 'axios';
-import CategoryList from 'CategoryList';
+import CategoryList from './CategoryList';
 import {useNavigate} from 'react-router-dom';
 
 export default function ManageCategories({url}) {

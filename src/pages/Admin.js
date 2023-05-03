@@ -11,10 +11,10 @@ export default function Admin() {
       <h3 style={{display: "flex", alignItems: "center"}}>Admin</h3>
       <ul>
         <li>
-          <Link to='/admin_managecategories'>Hallinnoi kategorioita</Link>
+          <Link to='/components_ManageCategories'>Hallinnoi kategorioita</Link>
         </li>
         <li>
-          <Link to='/admin_manageproducts'>Hallinnoi tuotteita</Link>
+          <Link to='/components_ManageProducts'>Hallinnoi tuotteita</Link>
         </li>
       </ul>
       </div>

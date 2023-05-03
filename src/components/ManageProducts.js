@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import axios from 'axios';
-import CategoryList from 'CategoryList';
+import CategoryList from './CategoryList';
 import uuid from 'react-uuid';
 import {useNavigate} from 'react-router-dom';
 
