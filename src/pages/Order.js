@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react';
 import uuid from 'react-uuid';
 import axios from 'axios';
 
-export default function Order({url, cart,removeFromCart,updateAmount,empty}) {
+export default function Order({url, cart,removeFromCart,updateAmount,empty,e}) {
   const [inputs, ] = useState([]);
   const [inputIndex, setInputIndex] = useState(-1);
 
@@ -36,7 +36,7 @@ export default function Order({url, cart,removeFromCart,updateAmount,empty}) {
       city: city,
       cart: cart,
     });
-    axios.post(url + 'order/save.php',json,{
+    axios.post("https://www.students.oamk.fi/~c2pima00/save.php",json,{
       headers: {
         'Accept': 'application/json',
         'Content-Type' : 'application/json'
@@ -111,7 +111,7 @@ export default function Order({url, cart,removeFromCart,updateAmount,empty}) {
                 <input className="form-control" onChange={e => setCity(e.target.value)}/>
               </div>
               <div className="buttons">
-                <button className="btn btn-dark">Tilaa</button>
+                <button type='submit' className="btn btn-dark">Tilaa</button>
               </div>
             </form>
             </>
