@@ -9,11 +9,11 @@ export default function Admin() {
       <h3 style={{display: "flex", alignItems: "center"}}>Admin</h3>
       <ul>
         <li>
-          <Link to='/components/ManageCategories'>Hallinnoi kategorioita</Link>
+          <Link to='/admin_ManageCategories'>Hallinnoi kategorioita</Link>
         </li>
-        <li>
-          <Link to='/components/ManageProducts'>Hallinnoi tuotteita</Link>
-        </li>
+{/*         <li>
+          <Link to='/admin_ManageProducts'>Hallinnoi tuotteita</Link>
+        </li> */}
       </ul>
       </div>
       </main>

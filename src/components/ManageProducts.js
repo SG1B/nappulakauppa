@@ -16,11 +16,11 @@ export default function ManageProducts({url}) {
 
   useEffect(() => {
     if (selectedCategory !== null) {
-      axios.get('https://www.students.oamk.fi/~c2pima00/getProducts.php' + selectedCategory.id)
+      axios.get('https://www.students.oamk.fi/~c2pima00/getProducts.php/' + selectedCategory.id)
       .then((response) => {
         const json = response.data;
         if (json) {
-          setProducts(json.products);
+          setProducts(json);
         }
       }).catch (error => {
         alert(error.response === undefined ? error : error.response.data.error);
@@ -30,8 +30,8 @@ export default function ManageProducts({url}) {
   
   function saveProduct(e) {
     e.preventDefault();
-    const json = JSON.stringify({name: productName,price: price,categoryid: selectedCategory.id});
-    axios.post('https://www.students.oamk.fi/~c2pima00/adminaddproduct.php ',json,{
+    const json = JSON.stringify({name: productName,price: price});
+    axios.post('https://www.students.oamk.fi/~c2pima00/addproduct.php',json,{
       headers: {
         'Content-Type' : 'application/json'
       }
