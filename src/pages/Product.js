@@ -35,7 +35,7 @@ export default function Product({ url, addToCart }) {
             <p>{product.kuvaus}</p>
             <p className='price'>{product.price} €</p>
             <div className="btn-group">
-              <button className='btn btn-outline-dark' type="button" onClick={() => addToCart(product.id)}>Lisää ostoskoriin</button>
+              <button className='btn btn-outline-dark' type="button" onClick={() => addToCart(product)}>Lisää ostoskoriin</button>
             </div>
 
           </div>

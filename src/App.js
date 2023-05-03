@@ -11,14 +11,13 @@ import Products from './pages/Products';
 import Product from './pages/Product';
 import Order from './pages/Order';
 import About from './pages/About';
+import Admin from './pages/Admin';
 import NotFound from './pages/NotFound';
 import SearchPage from './pages/SearchPage';
 import SearchQueries from './components/SearchQueries';
 import LoginButton from './components/LoginButton';
 import LoginModal from './components/LoginModal';
 import RegisterationPopUp from './components/RegisterationPopUp';
-//lisäykset admin
-import Admin from './pages/Admin';
 import ManageCategories from './components/ManageCategories';
 import ManageProducts from './components/ManageProducts';
 
@@ -75,7 +74,6 @@ function App() {
           <Route path='/product/:productId' element={<Product url={URL} />} />
           <Route path='/order' element={<Order cart={cart} removeFromCart={removeFromCart} updateAmount={updateAmount} />} />
           <Route path='/about' element={<About />} />
-
           <Route path='/RegisterationPopUp' element={<RegisterationPopUp />} />
           <Route path='/login' element={<LoginButton />} />
           <Route path='/loginmodal' element={<LoginModal />} />
@@ -83,7 +81,6 @@ function App() {
           <Route path='/searchqueries' element={<SearchQueries />} />
           <Route path='/searchpage' element={<SearchPage />} />
           <Route path='*' element={<NotFound />} />
-
           <Route path='/admin' element={<Admin />} />
           <Route path='/admin_managecategories' element={<ManageCategories />} />
           <Route path='/admin_manageproducts' element={<ManageProducts />} />
