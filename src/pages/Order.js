@@ -61,63 +61,65 @@ export default function Order({url, cart,removeFromCart,updateAmount,empty}) {
   if (finished === false) {
     return (
       <main>
-      <div className='ordercart'>
-        <h3 className="header">Korin tuotteet:</h3>
-        <table className="table">
-          <tbody>
-            {cart.map((product,index) => {
-              sum+=parseFloat(product.price) * parseInt(product.amount);
-              return (
-                <tr key={uuid()}>
-                  <td>{product.name}</td>
-                  <td>{product.price} €</td>
-                  <td>
-                    <input ref={inputs[index]} style={{width: '60px'}} value={product.amount} onChange={e => changeAmount(e,product,index)} />
-                  </td>
-                  <td><a href="/#" onClick={() => removeFromCart(product)}>Delete</a></td>
-                </tr>
-              )
-              })}
-            <tr key={uuid()}>
-              <td></td>
-              <td>{sum.toFixed(2)} €</td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-        {cart.length > 0 && // Render order form, if there is something in cart.
-          <>
-            <h3 className="header">Client information</h3>
-            <form onSubmit={order}>
-              <div className="form-group">
-                <label>First name:</label>
-                <input className="form-control" onChange={e => setFirstname(e.target.value)}/>
-              </div>
-              <div className="form-group">
-                <label>Last name:</label>
-                <input className="form-control" onChange={e => setLastname(e.target.value)}/>
-              </div>
-              <div className="form-group">
-                <label>Address:</label>
-                <input className="form-control" onChange={e => setAddress(e.target.value)}/>
-              </div>
-              <div className="form-group">
-                <label>Postal code</label>
-                <input className="form-control" onChange={e => setZip(e.target.value)}/>
-              </div>
-              <div className="form-group">
-                <label>City</label>
-                <input className="form-control" onChange={e => setCity(e.target.value)}/>
-              </div>
-              <div className="buttons">
-                <button className="btn btn-primary">Order</button>
-              </div>
-            </form>
+        <div className='ordercart'>
+          <h3 className="header">Korin tuotteet:</h3>
+          <table className="table">
+            <tbody>
+              {cart.map((product,index) => {
+                sum+=parseFloat(product.price) * parseInt(product.amount);
+                return (
+                  <tr key={uuid()}>
+                    <td>{product.name}</td>
+                    <td>{product.price} €</td>
+                    <td>
+                      <input ref={inputs[index]} style={{width: '60px'}} value={product.amount} onChange={e => changeAmount(e,product,index)} />
+                    </td>
+                    <td><button onClick={() => removeFromCart(product)}>Delete</button></td>
+                  </tr>
+                )
+                })}
+              <tr key={uuid()}>
+                <td></td>
+                <td>{sum.toFixed(2)} €</td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          {cart.length > 0 && // Render order form, if there is something in cart.
+            <>
+              <h3 className="header">Client information</h3>
+              <form onSubmit={order}>
+                <div className="form-group">
+                  <label>First name:</label>
+                  <input className="form-control" onChange={e => setFirstname(e.target.value)}/>
+                </div>
+                <div className="form-group">
+                  <label>Last name:</label>
+                  <input className="form-control" onChange={e => setLastname(e.target.value)}/>
+                </div>
+                <div className="form-group">
+                  <label>Address:</label>
+                  <input className="form-control" onChange={e => setAddress(e.target.value)}/>
+                </div>
+                <div className="form-group">
+                  <label>Postal code</label>
+                  <input className="form-control" onChange={e => setZip(e.target.value)}/>
+                </div>
+                <div className="form-group">
+                  <label>City</label>
+                  <input className="form-control" onChange={e => setCity(e.target.value)}/>
+                </div>
+                <div className="buttons">
+                  <button className="btn btn-primary">Order</button>
+                </div>
+              </form>
             </>
           }
-      </div>
-    )
+        </div>
+      </main>
+    );
+    
   } else {
     return (
     <main>

@@ -26,11 +26,15 @@ export default function Navbar({url,cart}) {
   function executeSearch(e) {
     if (e.charCode === 13) {
       e.preventDefault();
-      navigate('/products/' + search);
+      axios.get(url + `products/search.php?q=${search}`)
+        .then((response) => {
+          const json = response.data;
+          setResults(json);
+        }).catch (error => {
+          alert(error.response === undefined ? error : error.response.data.error);
+        })
     } 
   }
-  
-
 
   return (
     <nav className="navbar navbar-expand-md navbar-dark fixed-top">
@@ -44,11 +48,7 @@ export default function Navbar({url,cart}) {
         </button>
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <ul className="navbar-nav me-auto mb-2 mb-md-0">
-            {categories.map(category => (
-              <li className="nav-item" key={category.id}>
-                <Link className="nav-link" to={`/category/${category.id}`}>{category.name}</Link>
-              </li>
-            ))}
+         
           </ul>
           <ul className='navbar-nav ml-auto'>
             <li className='nav-item'>
@@ -60,21 +60,26 @@ export default function Navbar({url,cart}) {
             <li className='nav-item'>
               <LoginButton />
             </li>
-            
             <form className="form-inline my-2 my-lg-0">
-            <input 
-              value={search} 
-              onChange={(e) => setSearch(e.target.value)} 
-              onKeyPress={(e) => executeSearch(e)} 
-              className="form-control mr-sm-2" 
-              type="search" 
-              placeholder="Search" 
-              aria-label="Search" />
-          </form>
-          
-            
+              <input 
+                value={search} 
+                onChange={(e) => setSearch(e.target.value)} 
+                onKeyPress={(e) => executeSearch(e)} 
+                className="form-control mr-sm-2" 
+                type="search" 
+                placeholder="Search" 
+                aria-label="Search" />
+            </form>
+            {results.length > 0 && (
+              <ul className="navbar-nav ml-auto mt-2">
+                {results.map(result => (
+                  <li className="nav-item" key={result.id}>
+                    <Link className="nav-link" to={`/product/${result.id}`}>{result.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            )}
           </ul>
-          
         </div>
       </div>
     </nav>
