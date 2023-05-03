@@ -61,7 +61,7 @@ export default function Order({url, cart,removeFromCart,updateAmount,empty,e}) {
   if (finished === false) {
     return (
       <main>
-      <div className='ordercart'>
+      <div className='ordercart col-lg-14'>
         <h3 className="header">Korin tuotteet:</h3>
         <table className="table">
           <tbody>

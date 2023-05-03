@@ -272,6 +272,9 @@ a {
     top: 20px;
     right: 5px;
   }
+  .ordercart {
+    margin-left: 100px;
+  }
 }
 
 @media only screen and (max-width: 990px) {
@@ -294,6 +297,10 @@ a {
 @media only screen and (max-width: 767px) {
   #sidebar {
     display: none;
+  }
+
+  .ordercart {
+    margin-left: 0px;
   }
 
   #navbarCollapse {
