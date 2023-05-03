@@ -13,7 +13,7 @@ export default function ManageCategories({url}) {
   function saveCategory(e) {
     e.preventDefault();
     const json = JSON.stringify({name: newCategory});
-    axios.post(url + 'products/addcategory.php',json,{
+    axios.post('https://www.students.oamk.fi/~c2pima00/addcategory.php',json,{
       headers: {
         'Content-Type' : 'application/json'
       }
@@ -26,7 +26,6 @@ export default function ManageCategories({url}) {
       alert(error.response === undefined ? error : error.response.data.error);
     });
   }
-
   if (!addingCategory) {
     return (
       <>
