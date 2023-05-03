@@ -142,13 +142,13 @@ a {
   padding-right: 40px;
   padding-left: 40px;
 }
+
 .kuvaus{
   overflow: hidden;
   text-overflow: ellipsis;
-  max-height: 3em; /* show up to 3 lines of text */
-  line-height: 1em; /* adjust line height to fit the content nicely */
-  margin-bottom: 1em;
+  white-space: nowrap;
 }
+
 .price {
   font-size: large;
 }
