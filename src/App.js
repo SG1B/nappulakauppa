@@ -17,6 +17,10 @@ import SearchQueries from './components/SearchQueries';
 import LoginButton from './components/LoginButton';
 import LoginModal from './components/LoginModal';
 import RegisterationPopUp from './components/RegisterationPopUp';
+//lisäykset admin
+import Admin from './admin/Admin'
+import ManageCategories from './admin/ManageCategories';
+import ManageProducts from './admin/ManageProducts';
 
 const URL = 'http://localhost/nappulakauppa/';
 
@@ -79,6 +83,10 @@ function App() {
           <Route path='/searchqueries' element={<SearchQueries />} />
           <Route path='/searchpage' element={<SearchPage />} />
           <Route path='*' element={<NotFound />} />
+
+          <Route path='/admin' element={<Admin />} />
+          <Route path='/admin_managecategories' element={<ManageCategories />} />
+          <Route path='/admin_manageproducts' element={<ManageProducts />} />
         </Routes>
       </div>
       <Footer />
