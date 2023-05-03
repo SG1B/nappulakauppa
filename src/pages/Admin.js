@@ -1,5 +1,3 @@
-//oikea paikka: Pages
-
 import React from 'react'
 import { Link } from 'react-router-dom'
 
@@ -11,10 +9,10 @@ export default function Admin() {
       <h3 style={{display: "flex", alignItems: "center"}}>Admin</h3>
       <ul>
         <li>
-          <Link to='/components_ManageCategories'>Hallinnoi kategorioita</Link>
+          <Link to='/components/ManageCategories'>Hallinnoi kategorioita</Link>
         </li>
         <li>
-          <Link to='/components_ManageProducts'>Hallinnoi tuotteita</Link>
+          <Link to='/components/ManageProducts'>Hallinnoi tuotteita</Link>
         </li>
       </ul>
       </div>

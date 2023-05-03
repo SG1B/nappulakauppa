@@ -16,7 +16,7 @@ export default function ManageProducts({url}) {
 
   useEffect(() => {
     if (selectedCategory !== null) {
-      axios.get(url + 'products/getproducts.php/' + selectedCategory.id)
+      axios.get('https://www.students.oamk.fi/~c2pima00/getProducts.php' + selectedCategory.id)
       .then((response) => {
         const json = response.data;
         if (json) {
@@ -31,7 +31,7 @@ export default function ManageProducts({url}) {
   function saveProduct(e) {
     e.preventDefault();
     const json = JSON.stringify({name: productName,price: price,categoryid: selectedCategory.id});
-    axios.post(url + '/addproduct.php',json,{
+    axios.post('https://www.students.oamk.fi/~c2pima00/adminaddproduct.php ',json,{
       headers: {
         'Content-Type' : 'application/json'
       }
