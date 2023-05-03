@@ -79,8 +79,8 @@ function App() {
           <Route path='/NotFound' element={<NotFound />} />
           <Route path='*' element={<NotFound />} />
           <Route path='/admin' element={<Admin />} />
-          <Route path='/admin_managecategories' element={<ManageCategories />} />
-          <Route path='/admin_manageproducts' element={<ManageProducts />} />
+          <Route path='/admin_ManageCategories' element={<ManageCategories />} />
+          <Route path='/admin_ManageProducts' element={<ManageProducts />} />
         </Routes>
       </div>
       <Footer />

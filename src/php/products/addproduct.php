@@ -1,5 +1,4 @@
 <?php
-require_once './functions.php';
 header('Access-Control-Allow-Methods: POST, GET, PUT, DELETE, OPTIONS');
 header('Access-Control-Allow-Headers: Accept, Content-Type, Access-Control-Allow-Header');
 header('Content-Type: application/json');
@@ -17,17 +16,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
   
   exit(0);
 }
-$input = json_decode(file_get_contents('php://input'));
-$name = filter_var($input->name, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-$price = filter_var($input->price, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-$category_id = filter_var($input->category_id, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+$servername = "mysli.oamk.fi";
+$username = "c2pima00";
+$password = "ufWmZTMqw2qXGuEY";
+$dbname = "opisk_c2pima00";
 
-try {
-    $db = openDB();
-    $sql = "insert into product (name,price,image,category_id) values ('$name', $price, 'placeholder.png', $category_id)";
-    executeInsert($db, $sql);
-    $data = array('id' => $db->lastInsertId(), 'name' => $name, 'price' => $price, 'image' => 'placeholder.png');
-    print json_encode($data);
-} catch (PDOException $pdoex) {
-    returnError($pdoex);
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+ $name = $_POST["name"];
+    $price = $_POST["price"];
+    $category_id = $_POST["category_id"];
+
+    $sql = "INSERT INTO product (name, price, category_id) VALUES ('$name', $price, $category_id)";
+    if (mysqli_query($conn, $sql)) {
+        $response = array("status" => "success", "message" => "Tuotteen lisäys onnistui");
+        echo json_encode($response);
+    } else {
+        $response = array("status" => "error", "message" => "Error: " . $sql . "<br>" . mysqli_error($conn));
+        echo json_encode($response);
+    }
+}
+mysqli_close($conn);

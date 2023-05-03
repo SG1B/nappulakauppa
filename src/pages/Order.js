@@ -43,7 +43,7 @@ export default function Order({url, cart,removeFromCart,updateAmount,empty}) {
       }
     })
     .then(() => {
-      empty();
+      /* empty(); */
       setFinished(true);
     }).catch(error => {
       alert(error.response === undefined ? error : error.response.data.error);
@@ -60,8 +60,9 @@ export default function Order({url, cart,removeFromCart,updateAmount,empty}) {
 
   if (finished === false) {
     return (
-      <div>
-        <h3 className="header">Items in cart</h3>
+      <main>
+      <div className='ordercart'>
+        <h3 className="header">Korin tuotteet:</h3>
         <table className="table">
           <tbody>
             {cart.map((product,index) => {
@@ -118,6 +119,10 @@ export default function Order({url, cart,removeFromCart,updateAmount,empty}) {
       </div>
     )
   } else {
-    return (<h3>Thank you for your order</h3>);
+    return (
+    <main>
+    <h3>Thank you for your order</h3>
+    </main>
+    );
   }
 }

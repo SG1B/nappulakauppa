@@ -105,7 +105,7 @@ export default function Home({ url }) {
                 <p class="card-text kuvaus">{filteredProducts[0].kuvaus}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                  <Link to={`/product/${1}`}><button className="btn btn-sm btn-outline-dark">View</button></Link>
+                  <Link to={`/product/${1}`}><button className="btn btn-sm btn-outline-dark">Katso</button></Link>
                   </div>
                 </div>
               </div>
@@ -118,7 +118,7 @@ export default function Home({ url }) {
                 <p class="card-text kuvaus">{filteredProducts[1].kuvaus}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                  <Link to={`/product/${2}`}><button className="btn btn-sm btn-outline-dark">View</button></Link>
+                  <Link to={`/product/${2}`}><button className="btn btn-sm btn-outline-dark">Katso</button></Link>
                   </div>
                 </div>
               </div>
@@ -131,7 +131,7 @@ export default function Home({ url }) {
                 <p class="card-text kuvaus">{filteredProducts[2].kuvaus}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                  <Link to={`/product/${3}`}><button className="btn btn-sm btn-outline-dark">View</button></Link>
+                  <Link to={`/product/${3}`}><button className="btn btn-sm btn-outline-dark">Katso</button></Link>
                   </div>
                 </div>
               </div>
@@ -144,7 +144,7 @@ export default function Home({ url }) {
                 <p class="card-text kuvaus">{filteredProducts[3].kuvaus}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                  <Link to={`/product/${4}`}><button className="btn btn-sm btn-outline-dark">View</button></Link>
+                  <Link to={`/product/${4}`}><button className="btn btn-sm btn-outline-dark">Katso</button></Link>
                   </div>
                 </div>
               </div>
@@ -157,7 +157,7 @@ export default function Home({ url }) {
                 <p class="card-text kuvaus">{filteredProducts[4].kuvaus}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                  <Link to={`/product/${5}`}><button className="btn btn-sm btn-outline-dark">View</button></Link>
+                  <Link to={`/product/${5}`}><button className="btn btn-sm btn-outline-dark">Katso</button></Link>
                   </div>
                 </div>
               </div>
@@ -170,7 +170,7 @@ export default function Home({ url }) {
                 <p class="card-text kuvaus">{filteredProducts[5].kuvaus}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                  <Link to={`/product/${6}`}><button className="btn btn-sm btn-outline-dark">View</button></Link>
+                  <Link to={`/product/${6}`}><button className="btn btn-sm btn-outline-dark">Katso</button></Link>
                   </div>
                 </div>
               </div>
@@ -183,7 +183,7 @@ export default function Home({ url }) {
                 <p class="card-text kuvaus">{filteredProducts[6].kuvaus}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                  <Link to={`/product/${7}`}><button className="btn btn-sm btn-outline-dark">View</button></Link>
+                  <Link to={`/product/${7}`}><button className="btn btn-sm btn-outline-dark">Katso</button></Link>
                   </div>
                 </div>
               </div>
@@ -196,7 +196,7 @@ export default function Home({ url }) {
                 <p class="card-text kuvaus">{filteredProducts[7].kuvaus}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                  <Link to={`/product/${8}`}><button className="btn btn-sm btn-outline-dark">View</button></Link>
+                  <Link to={`/product/${8}`}><button className="btn btn-sm btn-outline-dark">Katso</button></Link>
                   </div>
                 </div>
               </div>
@@ -209,7 +209,7 @@ export default function Home({ url }) {
                 <p class="card-text kuvaus">{filteredProducts[8].kuvaus}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                  <Link to={`/product/${9}`}><button className="btn btn-sm btn-outline-dark">View</button></Link>
+                  <Link to={`/product/${9}`}><button className="btn btn-sm btn-outline-dark">Katso</button></Link>
                   </div>
                 </div>
               </div>

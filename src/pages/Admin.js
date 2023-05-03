@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import ManageProducts from '../components/ManageProducts'
 
 export default function Admin() {
   return (
@@ -9,10 +10,10 @@ export default function Admin() {
       <h3 style={{display: "flex", alignItems: "center"}}>Admin</h3>
       <ul>
         <li>
-          <Link to='/components/ManageCategories'>Hallinnoi kategorioita</Link>
+          <Link to='/admin_ManageCategories'>Hallinnoi kategorioita</Link>
         </li>
-        <li>
-          <Link to='/components/ManageProducts'>Hallinnoi tuotteita</Link>
+        <li >
+              <ManageProducts />
         </li>
       </ul>
       </div>

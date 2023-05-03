@@ -1,110 +1,73 @@
-import React,{useState,useEffect} from 'react';
-import axios from 'axios';
-import CategoryList from './CategoryList';
-import uuid from 'react-uuid';
-import {useNavigate} from 'react-router-dom';
+import React, { useState } from 'react';
 
-
-export default function ManageProducts({url}) {
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const [products,setProducts] = useState([]);
-  const [addingProduct, setAddingProduct] = useState(false);
-  const [productName,setProductName] = useState('');
-  const [price,setPrice] = useState('');
-  const navigate = useNavigate();
-  const navigateToAdmin = () => {navigate('/admin');};
-
-  useEffect(() => {
-    if (selectedCategory !== null) {
-      axios.get('https://www.students.oamk.fi/~c2pima00/getProducts.php' + selectedCategory.id)
-      .then((response) => {
-        const json = response.data;
-        if (json) {
-          setProducts(json.products);
-        }
-      }).catch (error => {
-        alert(error.response === undefined ? error : error.response.data.error);
-      })
-    }
-  }, [url,selectedCategory])
-  
-  function saveProduct(e) {
-    e.preventDefault();
-    const json = JSON.stringify({name: productName,price: price,categoryid: selectedCategory.id});
-    axios.post('https://www.students.oamk.fi/~c2pima00/adminaddproduct.php ',json,{
-      headers: {
-        'Content-Type' : 'application/json'
-      }
-    })
-    .then((response) => {
-      const updatedProducts = [...products,response.data];
-      setProducts(updatedProducts);
-      setAddingProduct(false);
-    }).catch(error => {
-      alert(error.response === undefined ? error : error.response.data.error);
-    });
-  }
-
-
-  if (!addingProduct) {
-    return (
-      <>
-      <main>
-      <div className='about'>
-        <h3>Hallinnoi tuotteita</h3>
-        <CategoryList url={url} selectedCategory = {selectedCategory} setSelectedCategory={setSelectedCategory}/>
-        <div className='about'>
-        <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '5vh'}}>
-        <table>
-          <thead>
-            <tr key={uuid()}>
-              <th>Nimi</th>
-              <th>Hinta</th>
-            </tr>
-          </thead>
-          <tbody>
-          {products.map((product) => (
-            <tr key={uuid()}>
-              <td>{product.name}</td>
-              <td>{product.price} €</td>
-            </tr>
-          ))}
-          </tbody>
-        </table>
-        </div>
-        <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '5vh'}}>
-          <button class="btn btn-warning" type="button" onClick={()=> setAddingProduct(true)}>Lisää</button>
-          <button class="btn btn-warning" type="button" onClick={navigateToAdmin}>Takaisin</button>
-        </div>
-      </div>
-      </div>
-      </main>
-      </>
-    )
-  } else {
-    return (
-      <>
-      <main>
-      <div className='about'>
-        <h3>Lisää uusi tuote</h3>
-        <form onSubmit={saveProduct}>
-          <div className='about'>
-            <label>Tuotteen nimi </label>
-            <input type="text" value={productName} onChange={(e) => setProductName(e.target.value)}/>
-          <div>
-            <label>Tuotteen hinta</label>
-            <input type="text" value={price} onChange={(e) => setPrice(e.target.value)}/>
-          </div>
-          <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '5vh'}}>
-          <button class="btn btn-warning" type="button" onClick={() => setAddingProduct(false)}>Peruuta</button>
-          <button class="btn btn-warning" type="submit">Tallenna</button>
-          <button class="btn btn-warning" type="button" onClick={navigateToAdmin}>Takaisin</button>
-          </div>
-          </div>
-        </form>
-        </div>
-      </main>
-      </>
-    )  
-  }
+function submitRegistrationForm(formData) {
+  // VAIHA TÄHÄN OIKEA OSOTE
+  fetch('https://www.students.oamk.fi/~c2pima00/addproduct.php', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.text())
+  .then(data => {
+    // Handle the response from the server
+    console.log(data);
+  })
+  .catch(error => {
+    // Handle any errors that occur during the request
+    console.error(error);
+  });
 }
+
+function ManageProducts() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [formData, setFormData] = useState({ name: '', email: '', password: '' });
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+
+    // Check if all fields have been filled
+    const isFormValid = form.checkValidity();
+    form.reportValidity();
+
+    if (isFormValid) {
+      submitRegistrationForm(new FormData(form));
+      alert('Tuotteen lisäys onnistui!');
+      setIsOpen(false);
+    }
+  }
+
+  return (
+    <>
+      <button className='btn btn-outline-dark' onClick={() => setIsOpen(true)}>Lisää Tuote</button>
+      {isOpen && (
+        <div className="login-popup">
+          <div className="login-window-wrapper">
+            <div id="login-wrapper" className="login-window">
+              <div className="login-header">
+                <h2>Lisää uusi tuote</h2>
+                <button className="btn btn-outline-dark" onClick={() => setIsOpen(false)}>X</button>
+              </div>
+              <div className="login-body">
+                <form onSubmit={handleFormSubmit}>
+                  <label htmlFor="name">Tuote nimi:</label>
+                  <input type="text" id="name" name="name" value={formData.name} onChange={(event) => setFormData({ ...formData, name: event.target.value })} required />
+                  <br />
+                  <label htmlFor="email">Hinta:</label><br/>
+                  <input type="number" id="price" name="price" value={formData.email} onChange={(event) => setFormData({ ...formData, email: event.target.value })} required />
+                  <br />
+                  <label htmlFor="password">Kategoria ID:</label><br />
+                  <input type="number" id="category_id" name="category_id" value={formData.password} onChange={(event) => setFormData({ ...formData, password: event.target.value })} required />
+                  <br />
+                  <br />
+                  <button className="btn btn-outline-dark" type="submit">Lisää tuote</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
+
+export default ManageProducts;

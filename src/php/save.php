@@ -8,7 +8,7 @@ $cart = $input -> cart;
 
 try{
     $db = openDb();
-    $db -> beginTransaction();
+    $db->beginTransaction();
 
     // lisätään asiakas
 
@@ -19,16 +19,16 @@ try{
         filter_var($address, FILTER_SANITIZE_FULL_SPECIAL_CHARS)."','".
         filter_var($zip, FILTER_SANITIZE_FULL_SPECIAL_CHARS)."','".
         filter_var($city, FILTER_SANITIZE_FULL_SPECIAL_CHARS)
-    ."')";
+        . "')";
 
-$customer_id = executeInsert($db, $sql);
+    $customer_id = executeInsert($db, $sql);
 
-// lisätään tilaus
+    // lisätään tilaus
 
 $sql = "insert into orders (customer_id) values (".$customer_id.")";
 $order_id = executeInsert($db, $sql);
 
-// lisätään tilausrivit looppaa ostoskorin sisältö
+    // lisätään tilausrivit looppaa ostoskorin sisältö
 
 foreach ($cart as $product) {
     $sql = "insert into order_row (order_id, product_id) values("
@@ -39,14 +39,13 @@ foreach ($cart as $product) {
     executeInsert($db, $sql);
 }
 
-$db -> commit(); // jos kaikki ok, niin tallennetaan tietokantaan
+    $db->commit(); // jos kaikki ok, niin tallennetaan tietokantaan
 
-// palautetaan 200 status ja customer id.
-header('HTTP/1.1 200 OK');
-$data = array('id' => $customer_id);
-echo json_encode($data);
-}
-catch (PDOException $pdoex){
+    // palautetaan 200 status ja customer id.
+    header('HTTP/1.1 200 OK');
+    $data = array('id' => $customer_id);
+    echo json_encode($data);
+} catch (PDOException $pdoex) {
     $db->rollback(); // jos jotain meni pieleen, niin kumotaan kaikki
     returnError($pdoex); // palautetaan virhe
 }
