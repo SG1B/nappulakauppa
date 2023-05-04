@@ -67,7 +67,7 @@ export default function Navbar({url,cart}) {
                 onKeyPress={(e) => executeSearch(e)} 
                 className="form-control mr-sm-2" 
                 type="search" 
-                placeholder="Search" 
+                placeholder="Etsi" 
                 aria-label="Search" />
             </form>
             {results.length > 0 && (
