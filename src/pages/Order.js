@@ -74,7 +74,7 @@ export default function Order({url, cart,removeFromCart,updateAmount,empty}) {
                     <td>
                       <input ref={inputs[index]} style={{width: '60px'}} value={product.amount} onChange={e => changeAmount(e,product,index)} />
                     </td>
-                    <td><button onClick={() => removeFromCart(product)}>Delete</button></td>
+                    <td><button className="btn btn-sm btn-outline-dark" onClick={() => removeFromCart(product)}>Delete</button></td>
                   </tr>
                 )
                 })}
