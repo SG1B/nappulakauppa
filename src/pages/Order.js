@@ -88,26 +88,26 @@ export default function Order({url, cart,removeFromCart,updateAmount,empty}) {
           </table>
           {cart.length > 0 && // Render order form, if there is something in cart.
             <>
-              <h3 className="header">Client information</h3>
+              <h3 className="header">Tilaustiedot:</h3>
               <form onSubmit={order}>
                 <div className="form-group">
-                  <label>First name:</label>
+                  <label>Etunimi:</label>
                   <input className="form-control" onChange={e => setFirstname(e.target.value)}/>
                 </div>
                 <div className="form-group">
-                  <label>Last name:</label>
+                  <label>Sukunimi:</label>
                   <input className="form-control" onChange={e => setLastname(e.target.value)}/>
                 </div>
                 <div className="form-group">
-                  <label>Address:</label>
+                  <label>Osoite:</label>
                   <input className="form-control" onChange={e => setAddress(e.target.value)}/>
                 </div>
                 <div className="form-group">
-                  <label>Postal code</label>
+                  <label>Postinumero:</label>
                   <input className="form-control" onChange={e => setZip(e.target.value)}/>
                 </div>
                 <div className="form-group">
-                  <label>City</label>
+                  <label>Kaupunki</label>
                   <input className="form-control" onChange={e => setCity(e.target.value)}/>
                 </div>
                 <div className="buttons">
