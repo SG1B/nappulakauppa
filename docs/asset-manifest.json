@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/nappulakauppa/static/css/main.ef89be26.css",
+    "main.js": "/nappulakauppa/static/js/main.8cd9ec0f.js",
+    "static/media/background_wallpaper_ver1_valittu.jpg": "/nappulakauppa/static/media/background_wallpaper_ver1_valittu.8e794c06fe84cb1735de.jpg",
+    "static/media/banneri_1_ilmanpuskaa.png": "/nappulakauppa/static/media/banneri_1_ilmanpuskaa.b25040f8fb79d3226c18.png",
+    "index.html": "/nappulakauppa/index.html",
+    "main.ef89be26.css.map": "/nappulakauppa/static/css/main.ef89be26.css.map",
+    "main.8cd9ec0f.js.map": "/nappulakauppa/static/js/main.8cd9ec0f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ef89be26.css",
+    "static/js/main.8cd9ec0f.js"
+  ]
+}
